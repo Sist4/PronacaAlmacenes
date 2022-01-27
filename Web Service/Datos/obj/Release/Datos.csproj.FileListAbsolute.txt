@@ -1,0 +1,16 @@
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\ServicioWEB v3\Pesaje\Datos\bin\Release\Datos.dll
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\ServicioWEB v3\Pesaje\Datos\bin\Release\Datos.pdb
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\ServicioWEB v3\Pesaje\Datos\obj\Release\Datos.csprojResolveAssemblyReference.cache
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\ServicioWEB v3\Pesaje\Datos\obj\Release\Datos.dll
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\ServicioWEB v3\Pesaje\Datos\obj\Release\Datos.pdb
+C:\Users\SISTEMAS PRECITROL\source\repos\WSPronaca\Datos\bin\Release\Datos.dll
+C:\Users\SISTEMAS PRECITROL\source\repos\WSPronaca\Datos\bin\Release\Datos.pdb
+C:\Users\SISTEMAS PRECITROL\source\repos\WSPronaca\Datos\obj\Release\Datos.csprojResolveAssemblyReference.cache
+C:\Users\SISTEMAS PRECITROL\source\repos\WSPronaca\Datos\obj\Release\Datos.dll
+C:\Users\SISTEMAS PRECITROL\source\repos\WSPronaca\Datos\obj\Release\Datos.pdb
+C:\Users\User\Documents\WSPronaca\Datos\bin\Release\Datos.dll
+C:\Users\User\Documents\WSPronaca\Datos\bin\Release\Datos.pdb
+C:\Users\User\Documents\WSPronaca\Datos\obj\Release\Datos.csproj.AssemblyReference.cache
+C:\Users\User\Documents\WSPronaca\Datos\obj\Release\Datos.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\WSPronaca\Datos\obj\Release\Datos.dll
+C:\Users\User\Documents\WSPronaca\Datos\obj\Release\Datos.pdb

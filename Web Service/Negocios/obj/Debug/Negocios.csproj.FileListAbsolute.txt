@@ -1,0 +1,23 @@
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\ServicioWEB v3\Pesaje\Negocios\bin\Debug\Negocios.dll
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\ServicioWEB v3\Pesaje\Negocios\bin\Debug\Negocios.pdb
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\ServicioWEB v3\Pesaje\Negocios\bin\Debug\Datos.dll
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\ServicioWEB v3\Pesaje\Negocios\bin\Debug\Datos.pdb
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\ServicioWEB v3\Pesaje\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\ServicioWEB v3\Pesaje\Negocios\obj\Debug\Negocios.dll
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\ServicioWEB v3\Pesaje\Negocios\obj\Debug\Negocios.pdb
+C:\Users\SISTEMAS PRECITROL\source\repos\WSPronaca\Negocios\bin\Debug\Negocios.dll
+C:\Users\SISTEMAS PRECITROL\source\repos\WSPronaca\Negocios\bin\Debug\Negocios.pdb
+C:\Users\SISTEMAS PRECITROL\source\repos\WSPronaca\Negocios\bin\Debug\Datos.dll
+C:\Users\SISTEMAS PRECITROL\source\repos\WSPronaca\Negocios\bin\Debug\Datos.pdb
+C:\Users\SISTEMAS PRECITROL\source\repos\WSPronaca\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
+C:\Users\SISTEMAS PRECITROL\source\repos\WSPronaca\Negocios\obj\Debug\Negocios.dll
+C:\Users\SISTEMAS PRECITROL\source\repos\WSPronaca\Negocios\obj\Debug\Negocios.pdb
+C:\Users\User\Documents\WSPronaca\Negocios\bin\Debug\Negocios.dll
+C:\Users\User\Documents\WSPronaca\Negocios\bin\Debug\Negocios.pdb
+C:\Users\User\Documents\WSPronaca\Negocios\bin\Debug\Datos.dll
+C:\Users\User\Documents\WSPronaca\Negocios\bin\Debug\Datos.pdb
+C:\Users\User\Documents\WSPronaca\Negocios\obj\Debug\Negocios.csproj.AssemblyReference.cache
+C:\Users\User\Documents\WSPronaca\Negocios\obj\Debug\Negocios.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\WSPronaca\Negocios\obj\Debug\Negocios.csproj.CopyComplete
+C:\Users\User\Documents\WSPronaca\Negocios\obj\Debug\Negocios.dll
+C:\Users\User\Documents\WSPronaca\Negocios\obj\Debug\Negocios.pdb

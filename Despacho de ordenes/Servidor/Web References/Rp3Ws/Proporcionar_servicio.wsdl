@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tns3="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.approuter.com/connectors/wsdl" xmlns:tns2="http://ln.gesalm.integracion.pronaca.com.ec" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns1="http://ln.gesalm.integracion.pronaca.com.ec/Imports" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" name="Proporcionar_servicio" targetNamespace="http://www.approuter.com/connectors/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://ln.gesalm.integracion.pronaca.com.ec" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ln.gesalm.integracion.pronaca.com.ec/Imports">
+      <xs:import namespace="http://ln.gesalm.integracion.pronaca.com.ec" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+    <xs:schema xmlns:tns="http://ln.gesalm.integracion.pronaca.com.ec" elementFormDefault="qualified" targetNamespace="http://ln.gesalm.integracion.pronaca.com.ec">
+      <xs:element name="SendBalanceData">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SendBalanceDataResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SendBalanceDataResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:annotation>
+        <xs:appinfo>
+          <app:node-app-property xmlns:app="http://www.approuter.com/schemas/2007/Mapping/AppInfo" name="resolved-schema-location">
+            <app:value>Rp3BalanceService.svc_xsd=xsd0</app:value>
+          </app:node-app-property>
+        </xs:appinfo>
+      </xs:annotation>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+      <xs:annotation>
+        <xs:appinfo>
+          <app:node-app-property xmlns:app="http://www.approuter.com/schemas/2007/Mapping/AppInfo" name="resolved-schema-location">
+            <app:value>Rp3BalanceService.svc_xsd=xsd1</app:value>
+          </app:node-app-property>
+        </xs:appinfo>
+      </xs:annotation>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="Proporcionar_servicioResponse">
+    <wsdl:part name="response" element="tns2:SendBalanceDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="Proporcionar_servicioRequest">
+    <wsdl:part name="request" element="tns2:SendBalanceData" />
+  </wsdl:message>
+  <wsdl:portType name="Proporcionar_servicioPort">
+    <wsdl:operation name="Proporcionar_servicio">
+      <wsdl:input message="tns:Proporcionar_servicioRequest" />
+      <wsdl:output message="tns:Proporcionar_servicioResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Proporcionar_servicioBinding" type="tns:Proporcionar_servicioPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Proporcionar_servicio">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Proporcionar_servicioService">
+    <wsdl:port name="Proporcionar_servicioPort" binding="tns:Proporcionar_servicioBinding">
+      <soap:address location="http://cipro01.pronaca.com:443/gestionImportacionPesos/RP3Desa" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,16 @@
+﻿1>------ Operación Compilar iniciada: proyecto: Negocios, configuración: Release Any CPU ------
+1>  Negocios -> C:\Users\SISTEMAS PRECITROL\source\repos\WSPronaca\Negocios\bin\Release\Negocios.dll
+2>------ Operación Compilar iniciada: proyecto: WebService, configuración: Release Any CPU ------
+2>  WebService -> C:\Users\SISTEMAS PRECITROL\source\repos\WebService\bin\WebService.dll
+3>------ Publicación iniciada: proyecto: WebService, configuración: Release Any CPU ------
+3>Conectándose a C:\Users\SISTEMAS PRECITROL\Desktop\wsNuevo...
+3>Se transformó Web.config usando C:\Users\SISTEMAS PRECITROL\source\repos\WebService\Web.Release.config en obj\Release\TransformWebConfig\transformed\Web.config.
+3>Copiando todos los archivos en la ubicación temporal siguiente para el empaquetado y publicación:
+3>obj\Release\Package\PackageTmp.
+3>Publicando carpeta /...
+3>Publicando carpeta bin...
+3>Publicando carpeta bin/roslyn...
+3>La aplicación web se publicó correctamente file:///C:/Users/SISTEMAS%20PRECITROL/Desktop/wsNuevo
+3>
+========== Compilar: 2 correctos, 0 incorrectos, 1 actualizados, 0 omitidos ==========
+========== Publicación: 1 procesados, 0 no procesados, 0 omitidos ==========

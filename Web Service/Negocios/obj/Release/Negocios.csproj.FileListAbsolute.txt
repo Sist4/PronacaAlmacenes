@@ -1,0 +1,23 @@
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\ServicioWEB v3\Pesaje\Negocios\bin\Release\Negocios.dll
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\ServicioWEB v3\Pesaje\Negocios\bin\Release\Negocios.pdb
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\ServicioWEB v3\Pesaje\Negocios\bin\Release\Datos.dll
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\ServicioWEB v3\Pesaje\Negocios\bin\Release\Datos.pdb
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\ServicioWEB v3\Pesaje\Negocios\obj\Release\Negocios.csprojResolveAssemblyReference.cache
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\ServicioWEB v3\Pesaje\Negocios\obj\Release\Negocios.dll
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\ServicioWEB v3\Pesaje\Negocios\obj\Release\Negocios.pdb
+C:\Users\SISTEMAS PRECITROL\source\repos\WSPronaca\Negocios\bin\Release\Negocios.dll
+C:\Users\SISTEMAS PRECITROL\source\repos\WSPronaca\Negocios\bin\Release\Negocios.pdb
+C:\Users\SISTEMAS PRECITROL\source\repos\WSPronaca\Negocios\bin\Release\Datos.dll
+C:\Users\SISTEMAS PRECITROL\source\repos\WSPronaca\Negocios\bin\Release\Datos.pdb
+C:\Users\SISTEMAS PRECITROL\source\repos\WSPronaca\Negocios\obj\Release\Negocios.dll
+C:\Users\SISTEMAS PRECITROL\source\repos\WSPronaca\Negocios\obj\Release\Negocios.pdb
+C:\Users\SISTEMAS PRECITROL\source\repos\WSPronaca\Negocios\obj\Release\Negocios.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\WSPronaca\Negocios\bin\Release\Negocios.dll
+C:\Users\User\Documents\WSPronaca\Negocios\bin\Release\Negocios.pdb
+C:\Users\User\Documents\WSPronaca\Negocios\bin\Release\Datos.dll
+C:\Users\User\Documents\WSPronaca\Negocios\bin\Release\Datos.pdb
+C:\Users\User\Documents\WSPronaca\Negocios\obj\Release\Negocios.csproj.AssemblyReference.cache
+C:\Users\User\Documents\WSPronaca\Negocios\obj\Release\Negocios.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\WSPronaca\Negocios\obj\Release\Negocios.csproj.CopyComplete
+C:\Users\User\Documents\WSPronaca\Negocios\obj\Release\Negocios.dll
+C:\Users\User\Documents\WSPronaca\Negocios\obj\Release\Negocios.pdb

@@ -1,0 +1,40 @@
+C:\Users\Sistemas\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\bin\Debug\Servidor.exe.config
+C:\Users\Sistemas\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\bin\Debug\Servidor.exe
+C:\Users\Sistemas\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\bin\Debug\Servidor.pdb
+C:\Users\Sistemas\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\bin\Debug\Servidor.xml
+C:\Users\Sistemas\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\bin\Debug\Negocios.dll
+C:\Users\Sistemas\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\bin\Debug\Datos.dll
+C:\Users\Sistemas\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\bin\Debug\Negocios.pdb
+C:\Users\Sistemas\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\bin\Debug\Negocios.xml
+C:\Users\Sistemas\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\bin\Debug\Datos.pdb
+C:\Users\Sistemas\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\bin\Debug\Datos.xml
+C:\Users\Sistemas\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\obj\Debug\Servidor.vbprojResolveAssemblyReference.cache
+C:\Users\Sistemas\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\obj\Debug\Servidor.Frm_Receptor.resources
+C:\Users\Sistemas\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\obj\Debug\Servidor.Resources.resources
+C:\Users\Sistemas\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\obj\Debug\Servidor.vbproj.GenerateResource.Cache
+C:\Users\Sistemas\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\obj\Debug\Servidor.exe
+C:\Users\Sistemas\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\obj\Debug\Servidor.xml
+C:\Users\Sistemas\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\obj\Debug\Servidor.pdb
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\bin\Debug\Servidor.exe.config
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\bin\Debug\Servidor.exe
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\bin\Debug\Servidor.pdb
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\bin\Debug\Servidor.xml
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\bin\Debug\Negocios.dll
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\bin\Debug\Datos.dll
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\bin\Debug\Negocios.pdb
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\bin\Debug\Negocios.xml
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\bin\Debug\Datos.pdb
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\bin\Debug\Datos.xml
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\obj\Debug\Servidor.vbprojResolveAssemblyReference.cache
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\obj\Debug\Servidor.Frm_Conexion.resources
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\obj\Debug\Servidor.Frm_Receptor.resources
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\obj\Debug\Servidor.Resources.resources
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\obj\Debug\Servidor.vbproj.GenerateResource.Cache
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\obj\Debug\Servidor.exe
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\obj\Debug\Servidor.xml
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\obj\Debug\Servidor.pdb
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\bin\Debug\Servidor.exe.manifest
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\bin\Debug\Servidor.application
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\obj\Debug\Servidor.exe.manifest
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\obj\Debug\Servidor.application
+C:\Users\SISTEMAS PRECITROL\Desktop\Proyectos Precitrol\Pronaca(Tiendas)\DESPACHO_DE_ORDENES\Servidor\obj\Debug\Servidor.Frm_Pruebas.resources

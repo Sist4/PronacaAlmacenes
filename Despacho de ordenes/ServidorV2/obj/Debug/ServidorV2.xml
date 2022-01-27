@@ -1,0 +1,38 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+ServidorV2
+</name>
+</assembly>
+<members>
+<member name="T:ServidorV2.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:ServidorV2.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:ServidorV2.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:ServidorV2.WsRp3.SendBalanceData">
+<remarks/>
+</member>
+<member name="P:ServidorV2.WsRp3.SendBalanceData.value">
+<remarks/>
+</member>
+<member name="T:ServidorV2.WsRp3.SendBalanceDataResponse">
+<remarks/>
+</member>
+<member name="P:ServidorV2.WsRp3.SendBalanceDataResponse.SendBalanceDataResult">
+<remarks/>
+</member>
+</members>
+</doc>
