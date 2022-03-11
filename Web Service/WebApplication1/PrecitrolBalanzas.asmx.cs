@@ -99,7 +99,7 @@ namespace WebService
                 try
                 {
 
-                    bool Respuesta = Transacciones.Insertar_Cabecera(IdEmpresa, IdEstablecimiento, IdPuntoOperacion, IdAjusteBalanza, CodigoLN, Tipo_Transaccion, Od_OrdenDespcho, Fecha_Ingreso, "A");
+                    bool Respuesta = Transacciones.Insertar_Cabera(IdEmpresa, IdEstablecimiento, IdPuntoOperacion, IdAjusteBalanza, CodigoLN, Tipo_Transaccion, Od_OrdenDespcho, Fecha_Ingreso, "A");
                     //  xmlRes += "<ItemsCabecera>";
                     respuesta_recibida = "EXITO";
 
@@ -170,7 +170,7 @@ namespace WebService
                 {
                     //enviamos datos para q ue se guarde en la tabla transacciones
                     bool Respuesta = Transacciones.Insertar_Pesaje(IdAjuste, Od_OrdenDespchoLinea, IdAjusteBalanzaD, SKU, Producto, UnidadesEstimadas, PesoEstimado);
-                    //Si el dato se guarda correctamente la respuesta va ser True
+                    //Si es el dato se gurda en correctamente la respuesta va ser True
                     //Armamos el cuerpo del xml 
                     respuesta_recibida = "EXITO";
 

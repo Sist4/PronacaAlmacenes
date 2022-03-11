@@ -169,7 +169,7 @@ Partial Class Frm_Conexion
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Frm_Conexion"
-        Me.Text = "Conexion A Basa de Datos"
+        Me.Text = " "
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)

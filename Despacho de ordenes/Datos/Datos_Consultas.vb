@@ -78,7 +78,8 @@ Public Class Datos_Consultas
         Try
             Using ConexionSql = New SqlConnection(CadenaSql.String_Conexion())
                 ' ComandoSql = New SqlCommand("select count(Id_Ajuste) from Transacciones where Od_OrdenDespcho='" & Orden_Despacho & "' and tra_estado ='A'", ConexionSql)
-                ComandoSql = New SqlCommand("select count(*) from Transacciones inner join Cabecera on Transacciones.IdAjusteBalanza=Cabecera.IdAjusteBalanza  where Cabecera.Od_OrdenDespcho='" & Orden_Despacho & "' and tra_estado ='A'", ConexionSql)
+                'ComandoSql = New SqlCommand("select count(*) from Transacciones inner join Cabecera on Transacciones.IdAjusteBalanza=Cabecera.IdAjusteBalanza  where Cabecera.Od_OrdenDespcho='" & Orden_Despacho & "' and tra_estado ='A'", ConexionSql)
+                ComandoSql = New SqlCommand("SELECT count(*)FROM Transacciones WHERE IdAjusteBalanza IN (SELECT IdAjusteBalanza FROM Cabecera where Cab_Estado='A' AND Od_OrdenDespcho='" & Orden_Despacho & "') AND  Tra_Estado='A' AND Od_OrdenDespcho='" & Orden_Despacho & "'", ConexionSql)
                 ConexionSql.Open()
                 Respuesta = Convert.ToString(ComandoSql.ExecuteScalar())
                 ConexionSql.Close()
@@ -169,7 +170,7 @@ Public Class Datos_Consultas
 
 
 
-    Public Function Gestion_Pesos(ID_Indicador As String, secuencial As String, Cod_Operador As String, Cod_Producto As String, Orden_Produccion As String, Cod_Tara As String, Peso As String, Unidades As String, estado As String, pes_gaveta As String) As Integer
+    Public Function Gestion_Pesos(ID_Indicador As String, secuencial As String, Cod_Operador As String, Cod_Producto As String, Orden_Produccion As String, Cod_Tara As String, Peso As String, Unidades As String, estado As String, pes_gaveta As String, lote As String) As Integer
         Dim Respuesta As Integer
         Try
             '*******************TIPOS DE ESTADO ******************
@@ -185,7 +186,7 @@ Public Class Datos_Consultas
 
             'End If
             Using ConexionSql = New SqlConnection(CadenaSql.String_Conexion())
-                ComandoSql = New SqlCommand("exec P_Pesaje  '" & ID_Indicador & "','" & secuencial & "','" & Cod_Operador & "','" & Cod_Producto & "','" & Orden_Produccion & "','" & Cod_Tara & "','" & Peso & "','" & Unidades & "','" & estado & "','" & pes_gaveta & "'", ConexionSql)
+                ComandoSql = New SqlCommand("exec P_Pesaje  '" & ID_Indicador & "','" & secuencial & "','" & Cod_Operador & "','" & Cod_Producto & "','" & Orden_Produccion & "','" & Cod_Tara & "','" & Peso & "','" & Unidades & "','" & estado & "','" & pes_gaveta & "','" & lote & "'", ConexionSql)
                 ConexionSql.Open()
                 Respuesta = ComandoSql.ExecuteNonQuery()
                 ConexionSql.Close()

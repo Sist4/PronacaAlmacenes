@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="be6cdf28-dd55-408b-bc89-62b4267726c8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="206ab14d-ee2e-4f75-bafc-c6f1924f3137" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,7 +22,7 @@
     <MetadataSource Address="https://cdcites.pronaca.com/pruebas/gestionimportacion/rp3balanzas/pesos?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Proporcionar_servicio1.wsdl" MetadataType="Wsdl" ID="b7b7db29-7fff-4d5f-953e-a136b7c89775" SourceId="1" SourceUrl="https://cdcites.pronaca.com/pruebas/gestionimportacion/rp3balanzas/pesos?wsdl" />
+    <MetadataFile FileName="Proporcionar_servicio.wsdl" MetadataType="Wsdl" ID="72569dbf-6641-4c70-bb67-89b110b4a388" SourceId="1" SourceUrl="https://cdcites.pronaca.com/pruebas/gestionimportacion/rp3balanzas/pesos?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

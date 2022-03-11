@@ -21,7 +21,7 @@ namespace Negocios
             return Datos_Pesaje.Insertar_Pesaje(IdAjuste, Od_OrdenDespcho, IdAjusteBalanza, SKU, Producto, Unidades, Peso); 
         }
 
-        public bool Insertar_Cabecera(string  IdEmpresa,string  IdEstablecimiento,string IdPuntoOperacion, String IdAjusteBalanza, String CodigoLN, String Tipo_Transaccion, String Od_OrdenDespcho, String Fecha_Ingreso, String Cab_Estado)
+        public bool Insertar_Cabera(string  IdEmpresa,string  IdEstablecimiento,string IdPuntoOperacion, String IdAjusteBalanza, String CodigoLN, String Tipo_Transaccion, String Od_OrdenDespcho, String Fecha_Ingreso, String Cab_Estado)
         {
             return Datos_Pesaje.Insertar_Cabera(IdEmpresa, IdEstablecimiento, IdPuntoOperacion, IdAjusteBalanza, CodigoLN, Tipo_Transaccion, Od_OrdenDespcho, Fecha_Ingreso, Cab_Estado);      
         }

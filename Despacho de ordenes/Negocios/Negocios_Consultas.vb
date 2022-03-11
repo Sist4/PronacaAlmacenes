@@ -24,9 +24,9 @@ Public Class Negocios_Consultas
 
         Return Consultas.Nombre_Producto(Cod_Producto, Orden_Despacho)
     End Function
-    Public Function Gestion_Pesos(ID_Indicador As String, secuencial As String, Cod_Operador As String, Cod_Producto As String, Orden_Produccion As String, Cod_Tara As String, Peso As String, Unidades As String, estado As String, Pes_Gaveta As String) As Integer
+    Public Function Gestion_Pesos(ID_Indicador As String, secuencial As String, Cod_Operador As String, Cod_Producto As String, Orden_Produccion As String, Cod_Tara As String, Peso As String, Unidades As String, estado As String, Pes_Gaveta As String, Lote As String) As Integer
 
-        Return Consultas.Gestion_Pesos(ID_Indicador, secuencial, Cod_Operador, Cod_Producto, Orden_Produccion, Cod_Tara, Peso, Unidades, estado, Pes_Gaveta)
+        Return Consultas.Gestion_Pesos(ID_Indicador, secuencial, Cod_Operador, Cod_Producto, Orden_Produccion, Cod_Tara, Peso, Unidades, estado, Pes_Gaveta, Lote)
     End Function
 
     Public Function Insertar_error(Log_Body As String, Log_Resultado As String, Log_Error As String) As Integer

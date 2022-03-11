@@ -47,21 +47,6 @@ Public Class Frm_Receptor
         End Try
     End Sub
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     Private Sub Frm_Receptor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Verificar_Conexion()
     End Sub

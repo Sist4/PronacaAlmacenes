@@ -1,0 +1,15 @@
+C:\Users\User\Documents\PronacaAlmacenes\Despacho de ordenes\Negocios\bin\Release\Negocios.dll
+C:\Users\User\Documents\PronacaAlmacenes\Despacho de ordenes\Negocios\bin\Release\Negocios.pdb
+C:\Users\User\Documents\PronacaAlmacenes\Despacho de ordenes\Negocios\bin\Release\Negocios.xml
+C:\Users\User\Documents\PronacaAlmacenes\Despacho de ordenes\Negocios\bin\Release\Datos.dll
+C:\Users\User\Documents\PronacaAlmacenes\Despacho de ordenes\Negocios\bin\Release\Datos.pdb
+C:\Users\User\Documents\PronacaAlmacenes\Despacho de ordenes\Negocios\bin\Release\Datos.xml
+C:\Users\User\Documents\PronacaAlmacenes\Despacho de ordenes\Negocios\bin\Release\Datos.dll.config
+C:\Users\User\Documents\PronacaAlmacenes\Despacho de ordenes\Negocios\obj\Release\Negocios.vbproj.AssemblyReference.cache
+C:\Users\User\Documents\PronacaAlmacenes\Despacho de ordenes\Negocios\obj\Release\Negocios.Resources.resources
+C:\Users\User\Documents\PronacaAlmacenes\Despacho de ordenes\Negocios\obj\Release\Negocios.vbproj.GenerateResource.cache
+C:\Users\User\Documents\PronacaAlmacenes\Despacho de ordenes\Negocios\obj\Release\Negocios.vbproj.CoreCompileInputs.cache
+C:\Users\User\Documents\PronacaAlmacenes\Despacho de ordenes\Negocios\obj\Release\Negocios.vbproj.CopyComplete
+C:\Users\User\Documents\PronacaAlmacenes\Despacho de ordenes\Negocios\obj\Release\Negocios.dll
+C:\Users\User\Documents\PronacaAlmacenes\Despacho de ordenes\Negocios\obj\Release\Negocios.xml
+C:\Users\User\Documents\PronacaAlmacenes\Despacho de ordenes\Negocios\obj\Release\Negocios.pdb

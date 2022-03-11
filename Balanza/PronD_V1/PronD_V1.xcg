@@ -1,0 +1,13 @@
+﻿<Project ID="IND570">
+    <ProjectHeader>
+        <OutputDir>C:\Users\User\Documents\Proyectos Precitrol\TASK EXPERT\PronD_V1\Output</OutputDir>
+    </ProjectHeader>
+    <Globals>
+        <Data />
+    </Globals>
+    <Tasks>
+        <StartupTask>
+            <Name>PronD_V1</Name>
+            <Location>C:\Users\User\AppData\Local\Temp\\te_tmp2E1B.tmp</Location>
+        </StartupTask>
+    </Tasks><Libraries /></Project>

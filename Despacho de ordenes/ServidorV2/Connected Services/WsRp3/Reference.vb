@@ -32,7 +32,7 @@ Namespace WsRp3
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=true, [Namespace]:="http://ln.gesalm.integracion.pronaca.com.ec")>  _
+     System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=true, [Namespace]:="https://ln.gesalm.integracion.pronaca.com.ec")>  _
     Partial Public Class SendBalanceData
         Inherits Object
         Implements System.ComponentModel.INotifyPropertyChanged
@@ -66,7 +66,7 @@ Namespace WsRp3
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=true, [Namespace]:="http://ln.gesalm.integracion.pronaca.com.ec")>  _
+     System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=true, [Namespace]:="https://ln.gesalm.integracion.pronaca.com.ec")>  _
     Partial Public Class SendBalanceDataResponse
         Inherits Object
         Implements System.ComponentModel.INotifyPropertyChanged
@@ -101,7 +101,7 @@ Namespace WsRp3
      System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
     Partial Public Class Proporcionar_servicioRequest
         
-        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://ln.gesalm.integracion.pronaca.com.ec", Order:=0)>  _
+        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="https://ln.gesalm.integracion.pronaca.com.ec", Order:=0)>  _
         Public SendBalanceData As WsRp3.SendBalanceData
         
         Public Sub New()
@@ -120,7 +120,7 @@ Namespace WsRp3
      System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
     Partial Public Class Proporcionar_servicioResponse
         
-        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://ln.gesalm.integracion.pronaca.com.ec", Order:=0)>  _
+        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="https://ln.gesalm.integracion.pronaca.com.ec", Order:=0)>  _
         Public SendBalanceDataResponse As WsRp3.SendBalanceDataResponse
         
         Public Sub New()

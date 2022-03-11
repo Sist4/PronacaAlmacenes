@@ -1,6 +1,8 @@
 ﻿Imports System.Net.Sockets
 Imports Negocios
 Imports System.Xml
+Imports System.Net
+Imports System.IO
 
 'Provides a container object to serve as the state object for async client and stream operations
 
@@ -9,6 +11,9 @@ Public Class ConnectionInfo
     Dim Consultas As New Negocios_Consultas()
     ' CONEXION AL WEB SERVICE DE RP3
     '  Dim webService As New WsRp3.SendBalanceData()
+    Dim Usuario As String = "balanzas_test"
+
+    Dim Pass As String = "QmFsYW56NHNQZXNvc1ByMG5hY2Ek"
 
     Private Function Cabecera(IdAjusteBalanza As String, TipoTransaccion As String,
                           IdEmpresa As String, IdEstablecimiento As String, IdPuntoOperacion As String, Fase As String, Estado As String, Errorr As String, FechaProceso As String) As String
@@ -63,9 +68,16 @@ Public Class ConnectionInfo
             Dim NodoCabecera As XmlNodeList
             Dim NodoDetalle As XmlNodeList
 
-            Dim Texto As String = "<mrm:GesImpPesBal xmlns:mrm=""http://ln.gesalm.integracion.pronaca.com.ec"">"
+            Dim e_Cambio As String = Xml
+            Dim Texto As String = "<GesImpPesBal xmlns:mrm=""http://ln.gesalm.integracion.pronaca.com.ec"">"
 
-            xmltest.LoadXml(Xml.Replace(Texto, "<Respuesta>").Replace("mrm:GesImpPesBal", "Respuesta"))
+            e_Cambio = Xml.Replace(Texto, "<Respuesta>").Replace("</GesImpPesBal>", "</Respuesta>")
+
+
+
+
+            'xmltest.LoadXml(Xml.Replace(Texto, "<Respuesta>").Replace("mrm:GesImpPesBal", "Respuesta"))
+            xmltest.LoadXml(e_Cambio)
 
 
             ' Obtenemos la lista de los nodos "name"
@@ -89,7 +101,7 @@ Public Class ConnectionInfo
                 End If
 
                 Dim res As Integer = Consultas.Gestion_PesosSoap(m_nodeDetalle.ChildNodes.Item(0).InnerText, m_nodeDetalle.ChildNodes.Item(1).InnerText, resultado_detalle)
-
+                MessageBox.Show(Xml)
                 'Next
 
 
@@ -110,6 +122,11 @@ Public Class ConnectionInfo
     End Function
 
 
+
+
+    Private Function CreateSOAPWebRequest() As HttpWebRequest
+        Throw New NotImplementedException()
+    End Function
 
     Private _Monitor As MonitorInfo
     Public ReadOnly Property Monitor As MonitorInfo
@@ -275,7 +292,7 @@ Public Class ConnectionInfo
                         Else
                             Estado = "D"
                         End If
-                        Dim Respuesta As String = Consultas.Gestion_Pesos(Consulta_Dato(1), Consulta_Dato(3), Consulta_Dato(4), Consulta_Dato(5), Consulta_Dato(6), Consulta_Dato(7), Consulta_Dato(8), Consulta_Dato(10), Estado, Consulta_Dato(11))
+                        Dim Respuesta As String = Consultas.Gestion_Pesos(Consulta_Dato(1), Consulta_Dato(3), Consulta_Dato(4), Consulta_Dato(5), Consulta_Dato(6), Consulta_Dato(7), Consulta_Dato(8), Consulta_Dato(10), Estado, Consulta_Dato(11), Consulta_Dato(12))
                         info.SendMessage("OK;")
 
                         'creamos la estructura de la bd
@@ -315,7 +332,7 @@ Public Class ConnectionInfo
 
                         Next
 
-                        Exit Sub
+                        ' Exit Sub
 
                         Try
                             'llamo al metodo
@@ -326,13 +343,16 @@ Public Class ConnectionInfo
 
                             Dim servicioPortClient As New WsRp3.Proporcionar_servicioPortClient()
                             Dim sendBalanceData As New WsRp3.SendBalanceData()
+                            '                            servicioPortClient.ClientCredentials = New NetworkCredential()
 
 
 
+                            servicioPortClient.ClientCredentials.UserName.UserName = Usuario
+                            servicioPortClient.ClientCredentials.UserName.Password = Pass
 
                             'Generamos la estructura del xml 
-                            'Dim StringXml As String = "<![CDATA[<mrm:GesImpPesBal xmlns:mrm=""http://ln.gesalm.integracion.pronaca.com.ec"">"
                             Dim StringXml As String = "<mrm:GesImpPesBal xmlns:mrm=""http://ln.gesalm.integracion.pronaca.com.ec"">"
+                            'Dim StringXml As String = "<mrm:GesImpPesBal xmlns:mrm=""http://ln.gesalm.integracion.pronaca.com.ec"">"
 
                             StringXml += "<ControlProceso>"
                             StringXml += "<CodigoCompania>602</CodigoCompania>"
@@ -350,6 +370,8 @@ Public Class ConnectionInfo
                             sendBalanceData.value = StringXml
                             Dim response As WsRp3.SendBalanceDataResponse = servicioPortClient.Proporcionar_servicio(sendBalanceData)
                             Dim XmlRespuesta As String = response.SendBalanceDataResult
+
+
                             '**********************************Comparamos la Respuestas***************************
                             '**** leemos la respuesta xml****
                             leer_Xml(XmlRespuesta)
@@ -359,7 +381,7 @@ Public Class ConnectionInfo
                             'Respuesta = Consultas.Gestion_Pesos(Consulta_Dato(1), Consulta_Dato(3), Consulta_Dato(4), Consulta_Dato(5), Consulta_Dato(6), Consulta_Dato(7), Consulta_Dato(8), Consulta_Dato(10), "C")
 
 
-                            'MsgBox(XmlRespuesta)
+                            MsgBox(XmlRespuesta)
 
                         Catch ex As Exception
                             MsgBox(ex.ToString())
@@ -416,7 +438,8 @@ Public Class ConnectionInfo
 
                         Dim servicioPortClient As New WsRp3.Proporcionar_servicioPortClient()
                         Dim sendBalanceData As New WsRp3.SendBalanceData()
-
+                        servicioPortClient.ClientCredentials.UserName.UserName = Usuario
+                        servicioPortClient.ClientCredentials.UserName.Password = Pass
                         '***********************************************************
                         Dim StringXml As String = "<mrm:GesImpPesBal xmlns:mrm=""http://ln.gesalm.integracion.pronaca.com.ec"">"
                         StringXml += "<ControlProceso>"
@@ -474,4 +497,8 @@ Public Class ConnectionInfo
             Stream.Write(messageData, 0, messageData.Length)
         End If
     End Sub
+
+
+
+
 End Class
