@@ -1,9 +1,0 @@
-﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
-  <Profiles />
-  <Settings>
-    <Setting Name="Servidor_Rp3Ws_Proporcionar_servicioService" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://cipro01.pronaca.com:443/gestionImportacionPesos/RP3Desa</Value>
-    </Setting>
-  </Settings>
-</SettingsFile>

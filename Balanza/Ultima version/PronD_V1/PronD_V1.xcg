@@ -1,0 +1,13 @@
+﻿<Project ID="IND570">
+    <ProjectHeader>
+        <OutputDir>C:\Users\dguamialama\Desktop\PronD_V1\Output</OutputDir>
+    </ProjectHeader>
+    <Globals>
+        <Data />
+    </Globals>
+    <Tasks>
+        <StartupTask>
+            <Name>PronD_V1</Name>
+            <Location>C:\Users\dguamialama\AppData\Local\Temp\\te_tmp5CF8.tmp</Location>
+        </StartupTask>
+    </Tasks><Libraries /></Project>

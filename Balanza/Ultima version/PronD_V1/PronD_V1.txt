@@ -1,0 +1,50 @@
+Pronaca Despachos PD_V1a.0 Sistema de Control de Despachos a Locales basado en Ferrero V1d.0
+----------------------------------------------------------------------------------------------------------
+Variables Compartidas configurables:
+
+  AZ0104 clavepro$       Clave de acceso Provista
+  AX0101 Cod_Provisto%   Cod.Aut.V2
+  AX0102 TmOut%          Time Out en milisegundos, Prog. por omisión: 3000
+  AY0102 Tol_Pct#        % Máx de Diferencia aceptable con Etiqueta.  Por Omision: 10%
+
+Los siguientes parámetros se inicializan desde Pantalla de Configuración
+
+  AR0103 IP_Server$      Dir. Ip Servidor que recibe los datos
+  AR0104 Port_Server$    Puerto en el Servidor de recepción de datos. Prog. Por Omisión: 1920
+  AY0101 Cero_Aceptable# Cero Aceptable
+  AY0103 Peso_Min#       Peso Mínimo
+  AZ0107 Tip$            Tipo: Blz. de Ingreso / Salida
+
+Otras Variables Compartidas:
+  AP0101 NumSecuencial%  Número Secuencial de Pesaje en este Terminal
+  AJ0101 Tara#           Tara en Uso
+  AR0108 W_Month         Mes en curso
+
+-----------------------------------------------------------------------------------------------------------
+
+
+- 23/Ago/2013 FD_V1a.0	Ferrero Desperdicios Basado en Supermaxi V1b.4  No-Funcional
+- 02/Sep/2013 FD_V1a.1	Implementación con cambios a Propuesta original luego de reunión de inicio.
+- 29/Oct/2013 FD_V1a.2	Pedir Clave de Supervisor y Observaciones, para pasar Verif. fuera de rango.
+- 24/Ene/2018 FD_V1a.3	Cambiar separador de envio de datos de "," a ";" *** NO USADO ***
+- 28/May/2018 FD_V1a.3	Conversión a IND570, Aumentar tamaño descripción Producto, *** No usar FocuslistX que no funciona bien
+ 
+- 14/Sep/2018 PD_V1a.0	Pronaca Despachos basado en Ferrero Desperdicios V1a.3, cambiar Cod.desperdicios por Productos
+- 24/Oct/2018 PD_V1a.1	Solicitar Ordenes de Despacho al Servidor, y Escoger una para procesar.
+- 04/Dic/2018 PD_V1a.2  No dejar conexiones si #Socket es 0 o negativo (Errores de Conexión).
+- 05/Dic/2018 PD_V1a.3  Solo Procesar #Items indicados, y enviar notificación de Finalización (QF;Ord.Desp$;ID_Blz$;").
+- 06/Dic/2018 PD_V1a.4  Permitir ingreso de #Items Verificados al hacer cada pesaje, y enviar a Receptor.
+- 04/Ene/2018 PD_V1a.5  Notificar si no hay Ordenes de Despacho disponibles, y Mejora manejo de Verif. de Datos.
+- 09/Sep/2019 PD_V1a.6  Borrar Descripción de Producto luego de cada pesaje, y Sólo dejar "Recepcion" en Config. Uso del Equipo
+- 25/Sep/2019 PD_V1a.7  Botón para descartar Productos NO RECIBIDOS, pero que están en la Orden de Despacho.
+
+- 07/Abr/2020 PD_V1a.8  Sustituir Tarea de Verificación, por Re-Transmisión, y Eliminar Tarea de Camión no utilizada
+  
+
+Falta:
+- Loop #Items a procesar, y trabajar Solicitando #Items recibidos.
+- Ingresar datos manualmente, no con Cod. Barras
+- Manejar Unidades además de peso
+
+Opcional:
+-SM_V1b.0 LOG de Transacciones ? (ya lista solo falta activar)
