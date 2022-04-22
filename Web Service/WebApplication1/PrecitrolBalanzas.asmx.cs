@@ -98,8 +98,10 @@ namespace WebService
 
                 try
                 {
-
-                    bool Respuesta = Transacciones.Insertar_Cabera(IdEmpresa, IdEstablecimiento, IdPuntoOperacion, IdAjusteBalanza, CodigoLN, Tipo_Transaccion, Od_OrdenDespcho, Fecha_Ingreso, "A");
+                    if(Transacciones.ConsutarOrden(Od_OrdenDespcho).Equals(""))
+                    {
+                        Transacciones.Insertar_Cabecera(IdEmpresa, IdEstablecimiento, IdPuntoOperacion, IdAjusteBalanza, CodigoLN, Tipo_Transaccion, Od_OrdenDespcho, Fecha_Ingreso, "A");
+                    }
                     //  xmlRes += "<ItemsCabecera>";
                     respuesta_recibida = "EXITO";
 

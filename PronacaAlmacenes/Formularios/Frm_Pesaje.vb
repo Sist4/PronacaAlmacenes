@@ -17,4 +17,8 @@ Public Class Frm_Pesaje
         cmbOrden.ValueMember = "Cab_Codigo"
 
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+    End Sub
 End Class

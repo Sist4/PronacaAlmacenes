@@ -84,7 +84,7 @@ namespace Datos
 
       ///--------------Insertamos la cabecera
 
-        public bool Insertar_Cabera(string  IdEmpresa,string  IdEstablecimiento,string IdPuntoOperacion , String IdAjusteBalanza, String CodigoLN, String Tipo_Transaccion, String Od_OrdenDespcho, String Fecha_Ingreso, String Cab_Estado)
+        public void Insertar_Cabecera(string  IdEmpresa,string  IdEstablecimiento,string IdPuntoOperacion , String IdAjusteBalanza, String CodigoLN, String Tipo_Transaccion, String Od_OrdenDespcho, String Fecha_Ingreso, String Cab_Estado)
         {
             try
             {
@@ -100,11 +100,11 @@ namespace Datos
                     ConexionSql.Close();
                     if (res < 0)
                     {
-                        return true;
+                        consulta = "no se realizó la consulta";
                     }
                     else
                     {
-                        return false;
+                        consulta="si se realizó la consulta";
                     }
                 }
 
@@ -118,7 +118,19 @@ namespace Datos
 
             }
         }
-
+        public string Consultar_Orden(string Od_OrdenDespacho)
+        {
+            using (var Conn = new SqlConnection(CadenaSql.String_Conexion()))
+            {
+                Conn.Open();
+                using (var command = new SqlCommand("SELECT Od_OrdenDespcho FROM Cabecera WHERE Od_OrdenDespcho=@orden", Conn))
+                {
+                    command.Parameters.Add(new SqlParameter("@orden", Od_OrdenDespacho));
+                    string orden = Convert.ToString(command.ExecuteScalar());
+                    return orden;
+                }
+            }
+        }
 
 
 

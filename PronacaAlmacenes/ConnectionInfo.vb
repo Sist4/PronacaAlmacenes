@@ -100,7 +100,8 @@ Public Class ConnectionInfo
                 End If
 
                 Dim res As Integer = Consultas.Gestion_PesosSoap(m_nodeDetalle.ChildNodes.Item(0).InnerText, m_nodeDetalle.ChildNodes.Item(1).InnerText, resultado_detalle)
-                MessageBox.Show(Xml)
+                'respuesta
+                'MessageBox.Show(Xml)
                 'Next
 
 
@@ -218,7 +219,9 @@ Public Class ConnectionInfo
                     Case "QP" 'PRODUCTO
                         '  Frm_Receptor.Txt_Consulta.Text = "hola"
 
-                        Dim Respuesta As String = Consultas.Nombre_Producto(Consulta_Dato(1), Consulta_Dato(2))
+                        Dim Respuesta As String = Consultas.Nombre_ProductoTemporal(Consulta_Dato(1), Consulta_Dato(2))
+
+                        'Consultas.Nombre_Producto(Consulta_Dato(1), Consulta_Dato(2))
 
                         If Respuesta.Equals("") Then
                             info.SendMessage(Chr(21) & "No Exite Informacion")
@@ -270,7 +273,8 @@ Public Class ConnectionInfo
 
                             End If
                         Else
-                            Dim Respuesta As String = Consultas.N_Pesajes(Consulta_Dato(1))
+                            Dim Respuesta As String = Consultas.N_PesajesTemporales(Consulta_Dato(1))
+                            'Consultas.N_Pesajes(Consulta_Dato(1))
                             If Respuesta.Equals("0") Or Respuesta = Nothing Then
                                 info.SendMessage(Chr(21) & "No hay ITEMS Para Pesar")
                                 Exit Sub
@@ -285,111 +289,30 @@ Public Class ConnectionInfo
                         'Exit Sub
 
                     Case "PA"
+                        Dim Estado As String = "A"
+                        Dim Respuesta As String = Consultas.Gestion_PesosTemporales(Consulta_Dato(1), Consulta_Dato(3), Consulta_Dato(4), Consulta_Dato(5), Consulta_Dato(6), Consulta_Dato(7), Consulta_Dato(8), Consulta_Dato(10), Estado, Consulta_Dato(11), Consulta_Dato(12))
+                        info.SendMessage("OK;")
 
                     Case "P"
                         'P;A;D;344;ADM1;2;OR002;1234;26.15; Kg.;0;
                         'P;A;D;344;ADM1;000001;RC-10000;1234;26.15;Kg.;0;
-                        Dim Estado As String
-                        If Consulta_Dato(8) > 1 Then
-                            Estado = "P"
-                        Else
-                            Estado = "D"
-                        End If
+                        'P;16;R;4;1;03053543;TRA-1054253;1;48.92; Kg.;2;2.260;123; 
+                        Dim Estado As String = "P"
                         Dim Respuesta As String = Consultas.Gestion_Pesos(Consulta_Dato(1), Consulta_Dato(3), Consulta_Dato(4), Consulta_Dato(5), Consulta_Dato(6), Consulta_Dato(7), Consulta_Dato(8), Consulta_Dato(10), Estado, Consulta_Dato(11), Consulta_Dato(12))
+                        Dim unidadesConfirmadas As String = Consultas.Consultar_UnidadesConfirmadas(Consulta_Dato(5), Consulta_Dato(6))
+                        Dim pesoConfirmado As Double = Consultas.Consultar_PesoConfirmado(Consulta_Dato(5), Consulta_Dato(6))
                         info.SendMessage("OK;")
+                        Dim NumeroPesajes As String = Consultas.N_PesajesTemporales(Consulta_Dato(6))
+                        If NumeroPesajes.Equals("0") Or NumeroPesajes = Nothing Then
+                            envioXML(Consulta_Dato, "F", unidadesConfirmadas, pesoConfirmado)
+                            Exit Sub
+                        Else
+                            envioXML(Consulta_Dato, "P", unidadesConfirmadas, pesoConfirmado)
+                            Exit Sub
 
-                        'creamos la estructura de la bd
-
-
-
-                        '***********************************************************
-
-                        Dim IdAjusteBalanza As String
-                        Dim TipoTransaccion As String
-                        Dim idEmpresa As String
-                        Dim IdEstablecimineto As String
-                        Dim IdPuntoOperacion As String
+                        End If
 
 
-                        'Dim IdAjuste As String
-                        Dim Datos_Clientes As DataSet = Consultas.Orden_Despacho(Consulta_Dato(6))
-                        For Each myReader As DataRow In Datos_Clientes.Tables(0).Rows
-                            idEmpresa = myReader(1).ToString()
-                            IdEstablecimineto = myReader(2).ToString()
-                            IdPuntoOperacion = myReader(3).ToString()
-                            IdAjusteBalanza = myReader(4).ToString()
-                            TipoTransaccion = myReader(6).ToString()
-
-                        Next
-                        '***********************************************************
-
-
-                        Dim idajuste As String
-                        Dim codigoLN As String
-
-                        Dim Datos_Detalle As DataSet = Consultas.Detalle(Consulta_Dato(6), Consulta_Dato(5))
-                        For Each myReader As DataRow In Datos_Detalle.Tables(0).Rows
-                            idajuste = myReader(0).ToString()
-                            codigoLN = myReader(1).ToString()
-
-
-                        Next
-
-                        ' Exit Sub
-
-                        Try
-                            'llamo al metodo
-                            ' Dim proxy As New WsRp3Prueba.GesImpPesBalClient
-
-
-
-
-                            Dim servicioPortClient As New WsRp3.Proporcionar_servicioPortClient()
-                            Dim sendBalanceData As New WsRp3.SendBalanceData()
-                            '                            servicioPortClient.ClientCredentials = New NetworkCredential()
-
-
-
-                            servicioPortClient.ClientCredentials.UserName.UserName = Usuario
-                            servicioPortClient.ClientCredentials.UserName.Password = Pass
-
-                            'Generamos la estructura del xml 
-                            Dim StringXml As String = "<mrm:GesImpPesBal xmlns:mrm=""http://ln.gesalm.integracion.pronaca.com.ec"">"
-                            'Dim StringXml As String = "<mrm:GesImpPesBal xmlns:mrm=""http://ln.gesalm.integracion.pronaca.com.ec"">"
-
-                            StringXml += "<ControlProceso>"
-                            StringXml += "<CodigoCompania>602</CodigoCompania>"
-                            StringXml += "<CodigoSistema>BALANZAS</CodigoSistema>"
-                            StringXml += "<CodigoServicio>GESIMPPESBAL</CodigoServicio>"
-                            StringXml += "<Proceso>ACTUALIZAR</Proceso><Resultado></Resultado>"
-                            StringXml += "</ControlProceso>"
-                            StringXml += "<Cabecera>"
-                            StringXml += Cabecera(IdAjusteBalanza, TipoTransaccion, idEmpresa, IdEstablecimineto, IdPuntoOperacion, "1", "1", "", DateTime.Now.ToString("yyyy-MM-dd"))
-                            StringXml += "</Cabecera>"
-                            StringXml += "<DetallesCabecera>"
-                            StringXml += Detalle(IdAjusteBalanza, idajuste, Consulta_Dato(5), Consulta_Dato(5), Consulta_Dato(8), Consulta_Dato(5), Consulta_Dato(1), Estado, DateTime.Now.ToString("yyyy-MM-dd"), Consulta_Dato(4), Consulta_Dato(10), "1", "1", "", DateTime.Now.ToString("yyyy-MM-dd"))
-                            StringXml += "</DetallesCabecera>"
-                            StringXml += "</mrm:GesImpPesBal>"
-                            sendBalanceData.value = StringXml
-                            Dim response As WsRp3.SendBalanceDataResponse = servicioPortClient.Proporcionar_servicio(sendBalanceData)
-                            Dim XmlRespuesta As String = response.SendBalanceDataResult
-
-
-                            '**********************************Comparamos la Respuestas***************************
-                            '**** leemos la respuesta xml****
-                            leer_Xml(XmlRespuesta)
-
-                            'si los pesajes se enviaron correctamente x el web service se pone le pesaje de compleatdo 
-                            'Respuesta = Consultas.Gestion_Pesos(Consulta_Dato(1), Consulta_Dato(3), Consulta_Dato(4), Consulta_Dato(5), Consulta_Dato(6), Consulta_Dato(7), Consulta_Dato(8), Consulta_Dato(10))
-                            'Respuesta = Consultas.Gestion_Pesos(Consulta_Dato(1), Consulta_Dato(3), Consulta_Dato(4), Consulta_Dato(5), Consulta_Dato(6), Consulta_Dato(7), Consulta_Dato(8), Consulta_Dato(10), "C")
-
-
-                            MsgBox(XmlRespuesta)
-
-                        Catch ex As Exception
-                            MsgBox(ex.ToString())
-                        End Try
-                        '************************Rernvio de la informacion pediente **********************************************
                     Case "R"
                         'armamos el xml para enviar todo
                         '***********************************************************
@@ -501,8 +424,84 @@ Public Class ConnectionInfo
         End If
     End Sub
 
-    Public Sub envioXML()
+    Public Sub envioXML(Consulta_Dato As String(), Estado As String, UnidadesConfirmadas As String, PesoConfirmado As Double)
+        Dim IdAjusteBalanza As String
+        Dim TipoTransaccion As String
+        Dim idEmpresa As String
+        Dim IdEstablecimineto As String
+        Dim IdPuntoOperacion As String
 
+        'Dim IdAjuste As String
+        Dim Datos_Clientes As DataSet = Consultas.Orden_Despacho(Consulta_Dato(6))
+        For Each myReader As DataRow In Datos_Clientes.Tables(0).Rows
+            idEmpresa = myReader(1).ToString()
+            IdEstablecimineto = myReader(2).ToString()
+            IdPuntoOperacion = myReader(3).ToString()
+            IdAjusteBalanza = myReader(4).ToString()
+            TipoTransaccion = myReader(6).ToString()
+
+        Next
+        '***********************************************************
+
+
+        Dim idajuste As String
+        Dim codigoLN As String
+
+        Dim Datos_Detalle As DataSet = Consultas.Detalle(Consulta_Dato(6), Consulta_Dato(5))
+        For Each myReader As DataRow In Datos_Detalle.Tables(0).Rows
+            idajuste = myReader(0).ToString()
+            codigoLN = myReader(1).ToString()
+
+
+        Next
+
+        ' Exit Sub
+
+        Try
+            'llamo al metodo
+            ' Dim proxy As New WsRp3Prueba.GesImpPesBalClient
+            Dim servicioPortClient As New WsRp3.Proporcionar_servicioPortClient()
+            Dim sendBalanceData As New WsRp3.SendBalanceData()
+            '                            servicioPortClient.ClientCredentials = New NetworkCredential()
+            servicioPortClient.ClientCredentials.UserName.UserName = Usuario
+            servicioPortClient.ClientCredentials.UserName.Password = Pass
+
+            'Generamos la estructura del xml 
+            Dim StringXml As String = "<mrm:GesImpPesBal xmlns:mrm=""http://ln.gesalm.integracion.pronaca.com.ec"">"
+            'Dim StringXml As String = "<mrm:GesImpPesBal xmlns:mrm=""http://ln.gesalm.integracion.pronaca.com.ec"">"
+
+            StringXml += "<ControlProceso>"
+            StringXml += "<CodigoCompania>602</CodigoCompania>"
+            StringXml += "<CodigoSistema>BALANZAS</CodigoSistema>"
+            StringXml += "<CodigoServicio>GESIMPPESBAL</CodigoServicio>"
+            StringXml += "<Proceso>ACTUALIZAR</Proceso><Resultado></Resultado>"
+            StringXml += "</ControlProceso>"
+            StringXml += "<Cabecera>"
+            StringXml += Cabecera(IdAjusteBalanza, TipoTransaccion, idEmpresa, IdEstablecimineto, IdPuntoOperacion, "1", "1", "", DateTime.Now.ToString("yyyy-MM-dd"))
+            StringXml += "</Cabecera>"
+            StringXml += "<DetallesCabecera>"
+            StringXml += Detalle(IdAjusteBalanza, idajuste, Consulta_Dato(5), Consulta_Dato(5), PesoConfirmado, Consulta_Dato(5), Consulta_Dato(1), Estado, DateTime.Now.ToString("yyyy-MM-dd"), Consulta_Dato(4), UnidadesConfirmadas, "1", "1", "", DateTime.Now.ToString("yyyy-MM-dd"))
+            StringXml += "</DetallesCabecera>"
+            StringXml += "</mrm:GesImpPesBal>"
+            sendBalanceData.value = StringXml
+            Dim response As WsRp3.SendBalanceDataResponse = servicioPortClient.Proporcionar_servicio(sendBalanceData)
+            Dim XmlRespuesta As String = response.SendBalanceDataResult
+
+
+            '**********************************Comparamos la Respuestas***************************
+            '**** leemos la respuesta xml****
+            leer_Xml(XmlRespuesta)
+
+            'si los pesajes se enviaron correctamente x el web service se pone le pesaje de compleatdo 
+            'Respuesta = Consultas.Gestion_Pesos(Consulta_Dato(1), Consulta_Dato(3), Consulta_Dato(4), Consulta_Dato(5), Consulta_Dato(6), Consulta_Dato(7), Consulta_Dato(8), Consulta_Dato(10))
+            'Respuesta = Consultas.Gestion_Pesos(Consulta_Dato(1), Consulta_Dato(3), Consulta_Dato(4), Consulta_Dato(5), Consulta_Dato(6), Consulta_Dato(7), Consulta_Dato(8), Consulta_Dato(10), "C")
+
+            'envío
+            'MsgBox(XmlRespuesta)
+
+        Catch ex As Exception
+            MsgBox(ex.ToString())
+        End Try
     End Sub
 
 

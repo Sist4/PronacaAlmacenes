@@ -14,3 +14,9 @@ C:\Users\User\Documents\WSPronaca\Datos\obj\Release\Datos.csproj.AssemblyReferen
 C:\Users\User\Documents\WSPronaca\Datos\obj\Release\Datos.csproj.CoreCompileInputs.cache
 C:\Users\User\Documents\WSPronaca\Datos\obj\Release\Datos.dll
 C:\Users\User\Documents\WSPronaca\Datos\obj\Release\Datos.pdb
+C:\Users\User\Documents\GitHub\PronacaAlmacenes\Web Service\Datos\bin\Release\Datos.dll
+C:\Users\User\Documents\GitHub\PronacaAlmacenes\Web Service\Datos\bin\Release\Datos.pdb
+C:\Users\User\Documents\GitHub\PronacaAlmacenes\Web Service\Datos\obj\Release\Datos.csproj.AssemblyReference.cache
+C:\Users\User\Documents\GitHub\PronacaAlmacenes\Web Service\Datos\obj\Release\Datos.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\PronacaAlmacenes\Web Service\Datos\obj\Release\Datos.dll
+C:\Users\User\Documents\GitHub\PronacaAlmacenes\Web Service\Datos\obj\Release\Datos.pdb

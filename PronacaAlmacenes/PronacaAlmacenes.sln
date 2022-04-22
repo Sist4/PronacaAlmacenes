@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PronacaAlmacenes", "PronacaAlmacenes.vbproj", "{2733D31E-BE62-4327-9F9E-58A491E94F54}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PronacaAlmacenesInstalador", "..\PronacaAlmacenesInstalador\PronacaAlmacenesInstalador.vdproj", "{045A044F-8181-4D8C-A662-954734CB7DD9}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PronacaAlmacenesReceptor", "..\PronacaAlmacenesReceptor\PronacaAlmacenesReceptor.vdproj", "{199C65B1-BAC4-45FC-BB6B-DACF41293F21}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{2733D31E-BE62-4327-9F9E-58A491E94F54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2733D31E-BE62-4327-9F9E-58A491E94F54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2733D31E-BE62-4327-9F9E-58A491E94F54}.Release|Any CPU.Build.0 = Release|Any CPU
-		{045A044F-8181-4D8C-A662-954734CB7DD9}.Debug|Any CPU.ActiveCfg = Debug
-		{045A044F-8181-4D8C-A662-954734CB7DD9}.Release|Any CPU.ActiveCfg = Release
+		{199C65B1-BAC4-45FC-BB6B-DACF41293F21}.Debug|Any CPU.ActiveCfg = Debug
+		{199C65B1-BAC4-45FC-BB6B-DACF41293F21}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

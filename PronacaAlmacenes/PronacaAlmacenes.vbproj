@@ -207,6 +207,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\pronaca-noticias-sin-imagen1.png" />
+    <None Include="Resources\pronaca-noticias-sin-imagen.png" />
     <None Include="Resources\PRONACA-1.png" />
     <None Include="Connected Services\WsRp3\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>

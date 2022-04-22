@@ -93,12 +93,51 @@ Public Class Datos_Consultas
         Return Respuesta
     End Function
 
+    Public Function N_PesajesTemporales(Orden_Despacho As String) As String
+        Dim Respuesta As String = ""
+        Try
+            Using ConexionSql = New SqlConnection(CadenaSql.String_Conexion())
+                ' ComandoSql = New SqlCommand("select count(Id_Ajuste) from Transacciones where Od_OrdenDespcho='" & Orden_Despacho & "' and tra_estado ='A'", ConexionSql)
+                'ComandoSql = New SqlCommand("select count(*) from Transacciones inner join Cabecera on Transacciones.IdAjusteBalanza=Cabecera.IdAjusteBalanza  where Cabecera.Od_OrdenDespcho='" & Orden_Despacho & "' and tra_estado ='A'", ConexionSql)
+                ComandoSql = New SqlCommand("SELECT count(*)FROM TransaccionesTemporales WHERE IdAjusteBalanza IN (SELECT IdAjusteBalanza FROM Cabecera where Cab_Estado='A' AND Od_OrdenDespcho='" & Orden_Despacho & "') AND  Tra_Estado='A' AND Od_OrdenDespcho='" & Orden_Despacho & "'", ConexionSql)
+                ConexionSql.Open()
+                Respuesta = Convert.ToString(ComandoSql.ExecuteScalar())
+                ConexionSql.Close()
+                SqlConnection.ClearAllPools()
+            End Using
+        Finally
+            If ConexionSql IsNot Nothing AndAlso ConexionSql.State <> ConnectionState.Closed Then
+                ConexionSql.Close()
+            End If
+        End Try
+        Return Respuesta
+    End Function
+
     Public Function Nombre_Producto(Cod_Producto As String, Orden_Despacho As String) As String
         Dim Respuesta As String = ""
         Try
             Using ConexionSql = New SqlConnection(CadenaSql.String_Conexion())
                 'ComandoSql = New SqlCommand("select Producto from Transacciones where SKU='" & Cod_Producto & "' and  Od_OrdenDespcho='" & Orden_Despacho & "' and tra_estado ='A' ", ConexionSql)
                 ComandoSql = New SqlCommand("select concat(producto,';','/',unidades,';',peso,';') from Transacciones inner join Cabecera on Transacciones.IdAjusteBalanza=Cabecera.IdAjusteBalanza where Transacciones.SKU='" & Cod_Producto & "' and  Cabecera.Od_OrdenDespcho='" & Orden_Despacho & "' and tra_estado ='A' ", ConexionSql)
+                ConexionSql.Open()
+                Respuesta = Convert.ToString(ComandoSql.ExecuteScalar())
+                ConexionSql.Close()
+                SqlConnection.ClearAllPools()
+            End Using
+        Finally
+            If ConexionSql IsNot Nothing AndAlso ConexionSql.State <> ConnectionState.Closed Then
+                ConexionSql.Close()
+            End If
+        End Try
+        Return Respuesta
+    End Function
+
+    Public Function Nombre_ProductoTemporal(Cod_Producto As String, Orden_Despacho As String) As String
+        Dim Respuesta As String = ""
+        Try
+            Using ConexionSql = New SqlConnection(CadenaSql.String_Conexion())
+                'ComandoSql = New SqlCommand("select Producto from Transacciones where SKU='" & Cod_Producto & "' and  Od_OrdenDespcho='" & Orden_Despacho & "' and tra_estado ='A' ", ConexionSql)
+                ComandoSql = New SqlCommand("select concat(producto,';','/',unidades,';',peso,';') from TransaccionesTemporales inner join Cabecera on TransaccionesTemporales.IdAjusteBalanza=Cabecera.IdAjusteBalanza where TransaccionesTemporales.SKU='" & Cod_Producto & "' and  Cabecera.Od_OrdenDespcho='" & Orden_Despacho & "' and tra_estado ='A' ", ConexionSql)
                 ConexionSql.Open()
                 Respuesta = Convert.ToString(ComandoSql.ExecuteScalar())
                 ConexionSql.Close()
@@ -126,6 +165,54 @@ Public Class Datos_Consultas
                 Dim Comando_Sql As SqlCommand = New SqlCommand(consulta, ConexionSql)
                 Dim Adaptador_Sql As SqlDataAdapter = New SqlDataAdapter(Comando_Sql)
                 Adaptador_Sql.Fill(Dato_Almacenado)
+                ConexionSql.Close()
+                SqlConnection.ClearAllPools()
+            End Using
+
+        Finally
+
+            If ConexionSql IsNot Nothing AndAlso ConexionSql.State <> ConnectionState.Closed Then
+                ConexionSql.Close()
+            End If
+        End Try
+
+        Return Dato_Almacenado
+    End Function
+
+    Public Function Consultar_UnidadesConfirmadas(Producto As String, Orden As String) As String
+        Dim Dato_Almacenado As String = ""
+        Dim consulta As String = ""
+        Try
+            'consulta = "select * from Cabecera where Od_OrdenDespcho='" & Orden & "'"
+            consulta = "SELECT UnidadesConfirmadas FROM Transacciones WHERE Od_OrdenDespcho='" & Orden & "'" & " AND SKU='" & Producto & "'"
+            Using ConexionSql = New SqlConnection(CadenaSql.String_Conexion())
+                ConexionSql.Open()
+                Dim Comando_Sql As SqlCommand = New SqlCommand(consulta, ConexionSql)
+                Dato_Almacenado = Convert.ToString(Comando_Sql.ExecuteScalar())
+                ConexionSql.Close()
+                SqlConnection.ClearAllPools()
+            End Using
+
+        Finally
+
+            If ConexionSql IsNot Nothing AndAlso ConexionSql.State <> ConnectionState.Closed Then
+                ConexionSql.Close()
+            End If
+        End Try
+
+        Return Dato_Almacenado
+    End Function
+
+    Public Function Consultar_PesoConfirmado(Producto As String, Orden As String) As Double
+        Dim Dato_Almacenado As Double = 0
+        Dim consulta As String = ""
+        Try
+            'consulta = "select * from Cabecera where Od_OrdenDespcho='" & Orden & "'"
+            consulta = "SELECT PesoConfirmado FROM Transacciones WHERE Od_OrdenDespcho='" & Orden & "'" & " AND SKU='" & Producto & "'"
+            Using ConexionSql = New SqlConnection(CadenaSql.String_Conexion())
+                ConexionSql.Open()
+                Dim Comando_Sql As SqlCommand = New SqlCommand(consulta, ConexionSql)
+                Dato_Almacenado = Convert.ToDouble(Comando_Sql.ExecuteScalar())
                 ConexionSql.Close()
                 SqlConnection.ClearAllPools()
             End Using
@@ -187,6 +274,37 @@ Public Class Datos_Consultas
             'End If
             Using ConexionSql = New SqlConnection(CadenaSql.String_Conexion())
                 ComandoSql = New SqlCommand("exec P_Pesaje  '" & ID_Indicador & "','" & secuencial & "','" & Cod_Operador & "','" & Cod_Producto & "','" & Orden_Produccion & "','" & Cod_Tara & "','" & Peso & "','" & Unidades & "','" & estado & "','" & pes_gaveta & "','" & lote & "'", ConexionSql)
+                ConexionSql.Open()
+                Respuesta = ComandoSql.ExecuteNonQuery()
+                ConexionSql.Close()
+            End Using
+        Finally
+            If ConexionSql IsNot Nothing AndAlso ConexionSql.State <> ConnectionState.Closed Then
+                ConexionSql.Close()
+            End If
+        End Try
+        Return Respuesta
+    End Function
+
+
+
+    Public Function Gestion_PesosTemporales(ID_Indicador As String, secuencial As String, Cod_Operador As String, Cod_Producto As String, Orden_Produccion As String, Cod_Tara As String, Peso As String, Unidades As String, estado As String, pes_gaveta As String, lote As String) As Integer
+        Dim Respuesta As Integer
+        Try
+            '*******************TIPOS DE ESTADO ******************
+            ' A=Activo cuando a un no serealiza ningun pesaje 
+            ' P=PESADO cuando ya se realizo el pesaje 
+            ' D=Cuando se descarto el pesaje la balanza envia el pesaje en 0 
+
+            'Dim Estado As String
+            'If Peso > 0 Then
+            '    Estado = "P"
+            'Else
+            '    Estado = "D"
+
+            'End If
+            Using ConexionSql = New SqlConnection(CadenaSql.String_Conexion())
+                ComandoSql = New SqlCommand("exec P_Parciales  '" & ID_Indicador & "','" & secuencial & "','" & Cod_Operador & "','" & Cod_Producto & "','" & Orden_Produccion & "','" & Cod_Tara & "','" & Peso & "','" & Unidades & "','" & estado & "','" & pes_gaveta & "','" & lote & "'", ConexionSql)
                 ConexionSql.Open()
                 Respuesta = ComandoSql.ExecuteNonQuery()
                 ConexionSql.Close()
