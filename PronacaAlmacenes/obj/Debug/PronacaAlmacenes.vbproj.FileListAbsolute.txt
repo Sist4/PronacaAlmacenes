@@ -28,3 +28,34 @@ C:\Users\User\Documents\Ejemplos Visual\PronacaAlmacenes\obj\Debug\PronacaAlmace
 C:\Users\User\Documents\Ejemplos Visual\PronacaAlmacenes\obj\Debug\PronacaAlmacenes.pdb
 C:\Users\User\Documents\Ejemplos Visual\PronacaAlmacenes\obj\Debug\PronacaAlmacenes.Frm_Principal.resources
 C:\Users\User\Documents\Ejemplos Visual\PronacaAlmacenes\obj\Debug\PronacaAlmacenes.Frm_Pesaje.resources
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\bin\Debug\PronacaAlmacenes.exe.config
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\bin\Debug\PronacaAlmacenes.exe
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\bin\Debug\PronacaAlmacenes.pdb
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\bin\Debug\PronacaAlmacenes.xml
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\bin\Debug\System.Security.AccessControl.dll
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\bin\Debug\System.Security.Permissions.dll
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\bin\Debug\Microsoft.IdentityModel.Logging.xml
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\bin\Debug\System.Security.AccessControl.xml
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\bin\Debug\System.Security.Permissions.xml
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\obj\Debug\PronacaAlmacenes.Frm_Conexion.resources
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\obj\Debug\PronacaAlmacenes.Frm_Principal.resources
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\obj\Debug\PronacaAlmacenes.Frm_Pruebas.resources
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\obj\Debug\PronacaAlmacenes.Frm_Receptor.resources
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\obj\Debug\PronacaAlmacenes.Frm_Pesaje.resources
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\obj\Debug\PronacaAlmacenes.Resources.resources
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\obj\Debug\PronacaAlmacenes.vbproj.GenerateResource.cache
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\obj\Debug\PronacaAlmacenes.vbproj.CoreCompileInputs.cache
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\obj\Debug\PronacaAlmacenes.vbproj.CopyComplete
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\obj\Debug\PronacaAlmacenes.exe
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\obj\Debug\PronacaAlmacenes.xml
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\obj\Debug\PronacaAlmacenes.pdb
+C:\Users\Sistemas\Documents\GitHub\PronacaAlmacenes\PronacaAlmacenes\obj\Debug\PronacaAlmacenes.vbproj.AssemblyReference.cache

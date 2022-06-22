@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="O2kukhFggufmpNvg+/3wzi9SgJXZqqWx2yEp6XPqPo4=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="hUGIe/d6T9espEodjLPJ2vnrSS2Ic6X/SIYUTomqMPE=">
   <bindingConfigurations>
-    <bindingConfiguration bindingType="basicHttpBinding" name="Proporcionar_servicioBinding2">
+    <bindingConfiguration bindingType="basicHttpBinding" name="Proporcionar_servicioBinding">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>Proporcionar_servicioBinding2</serializedValue>
+          <serializedValue>Proporcionar_servicioBinding</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -110,10 +110,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="basicHttpBinding" name="Proporcionar_servicioBinding3">
+    <bindingConfiguration bindingType="basicHttpBinding" name="Proporcionar_servicioBinding1">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>Proporcionar_servicioBinding3</serializedValue>
+          <serializedValue>Proporcionar_servicioBinding1</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -221,7 +221,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="Proporcionar_servicioPort1" contract="WsRp3.Proporcionar_servicioPort" bindingType="basicHttpBinding" address="https://cdcites.pronaca.com/pruebas/gestionimportacion/rp3balanzas/pesos" bindingConfiguration="Proporcionar_servicioBinding2">
+    <endpoint name="Proporcionar_servicioPort" contract="WsRp3.Proporcionar_servicioPort" bindingType="basicHttpBinding" address="https://cdcites.pronaca.com/pruebas/gestionimportacion/rp3balanzas/pesos" bindingConfiguration="Proporcionar_servicioBinding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>https://cdcites.pronaca.com/pruebas/gestionimportacion/rp3balanzas/pesos</serializedValue>
@@ -233,7 +233,7 @@
           <serializedValue>basicHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>Proporcionar_servicioBinding2</serializedValue>
+          <serializedValue>Proporcionar_servicioBinding</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>WsRp3.Proporcionar_servicioPort</serializedValue>
@@ -296,7 +296,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>Proporcionar_servicioPort1</serializedValue>
+          <serializedValue>Proporcionar_servicioPort</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

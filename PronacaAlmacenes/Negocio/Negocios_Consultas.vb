@@ -20,14 +20,14 @@
         Return Consultas.N_Pesajes(Orden_Despacho)
     End Function
 
-    Public Function N_PesajesTemporales(Orden_Despacho As String) As String
+    Public Function N_PesajesTemporales(Orden_Despacho As String, Establecimiento As String) As String
 
-        Return Consultas.N_PesajesTemporales(Orden_Despacho)
+        Return Consultas.N_PesajesTemporales(Orden_Despacho, Establecimiento)
     End Function
 
-    Public Function Nombre_ProductoTemporal(Cod_Producto As String, Orden_Despacho As String) As String
+    Public Function Nombre_ProductoTemporal(Cod_Producto As String, Orden_Despacho As String, Establecimiento As String) As String
 
-        Return Consultas.Nombre_ProductoTemporal(Cod_Producto, Orden_Despacho)
+        Return Consultas.Nombre_ProductoTemporal(Cod_Producto, Orden_Despacho, Establecimiento)
     End Function
     Public Function Nombre_Producto(Cod_Producto As String, Orden_Despacho As String) As String
 
@@ -41,6 +41,9 @@
     End Function
     Public Function Consultar_PesoConfirmado(Cod_Producto As String, Orden_Produccion As String) As Double
         Return Consultas.Consultar_PesoConfirmado(Cod_Producto, Orden_Produccion)
+    End Function
+    Public Function Consultar_LoteConfirmado(Cod_Producto As String, Orden_Produccion As String) As String
+        Return Consultas.Consultar_LoteConfirmado(Cod_Producto, Orden_Produccion)
     End Function
     Public Function Gestion_PesosTemporales(ID_Indicador As String, secuencial As String, Cod_Operador As String, Cod_Producto As String, Orden_Produccion As String, Cod_Tara As String, Peso As String, Unidades As String, estado As String, Pes_Gaveta As String, Lote As String) As Integer
 
@@ -71,6 +74,10 @@
         Return Consultas.Gestion_PesosSoap(IdAjusteBalanza, IdAjuste, tra_envio)
     End Function
 
+    Public Function CambiarEstadoEnvio(Orden As String, Producto As String, Estado As String) As Integer
+
+        Return Consultas.CambiarEstadoEnvio(Orden, Producto, Estado)
+    End Function
 
 End Class
 
