@@ -30,3 +30,12 @@ C:\Users\User\Documents\GitHub\PronacaAlmacenes\Web Service\Negocios\obj\Release
 C:\Users\User\Documents\GitHub\PronacaAlmacenes\Web Service\Negocios\obj\Release\Negocios.csproj.CopyComplete
 C:\Users\User\Documents\GitHub\PronacaAlmacenes\Web Service\Negocios\obj\Release\Negocios.dll
 C:\Users\User\Documents\GitHub\PronacaAlmacenes\Web Service\Negocios\obj\Release\Negocios.pdb
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\Web Service\Negocios\bin\Release\Negocios.dll
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\Web Service\Negocios\bin\Release\Negocios.pdb
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\Web Service\Negocios\bin\Release\Datos.dll
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\Web Service\Negocios\bin\Release\Datos.pdb
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\Web Service\Negocios\obj\Release\Negocios.csproj.AssemblyReference.cache
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\Web Service\Negocios\obj\Release\Negocios.csproj.CoreCompileInputs.cache
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\Web Service\Negocios\obj\Release\Negocios.csproj.CopyComplete
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\Web Service\Negocios\obj\Release\Negocios.dll
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\Web Service\Negocios\obj\Release\Negocios.pdb

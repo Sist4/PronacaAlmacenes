@@ -25,7 +25,7 @@ namespace Datos
             string consulta;
             try
             {
-                consulta = "SELECT CodigoLN,Id_Ajuste,IdAjusteBalanza,SKU,UnidadesConfirmadas,PesoConfirmado,Tar_Codigo,Tra_Fecha,Tra_Estado FROM TRANSACCIONES where CodigoLN ='" + IdAjusteBalanza + "'";
+                consulta = "SELECT Id_Ajuste,IdAjusteBalanza,SKU,UnidadesConfirmadas,PesoConfirmado,Tar_Codigo,Tra_Fecha,Tra_Estado FROM TRANSACCIONES where SKU ='" + SKU + "'";
                 using (ConexionSql = new SqlConnection(CadenaSql.String_Conexion()))
                 {
                     ConexionSql.Open();
@@ -50,24 +50,29 @@ namespace Datos
         {
           try 
           {
-
-
-                using (ConexionSql = new SqlConnection(CadenaSql.String_Conexion()))
+                using (var Conn = new SqlConnection(CadenaSql.String_Conexion()))
                 {
-                    string consulta = "INSERT INTO dbo.Transacciones(IdAjuste,Od_OrdenDespcho,IdAjusteBalanza,SKU,Producto,Unidades,Peso,FecIng,Tra_Estado )VALUES('" + IdAjuste + "','" + Od_OrdenDespcho + "','"+ IdAjusteBalanza  + "','" + SKU + "','" + Producto + "','" + Unidades + "','" + Peso + "',getdate(),'A')";
-                    ConexionSql.Open();
-                    SqlCommand Comando_Sql = new SqlCommand(consulta, ConexionSql);
-                    var res = Comando_Sql.ExecuteNonQuery();  
-
-                    ConexionSql.Close();
-                     if(res < 0)
-                     {
-                          return true;
-                     }
-                     else
-                     {
-                        return false;
-                     }
+                    Conn.Open();
+                    using (var command = new SqlCommand("INSERT INTO dbo.Transacciones(IdAjuste,IdAjusteBalanza,Od_OrdenDespcho,SKU,Producto,UnidadesEstimadas,PesoEstimado,FecIng,Tra_Estado) VALUES(@id_ajuste,@id_ajuste_balanza,@od_orden_despacho,@sku,@producto,@unidades_estimadas,@peso_estimado,GETDATE(),'A')", Conn))
+                    {
+                        command.Parameters.Add(new SqlParameter("@id_ajuste", IdAjuste));
+                        command.Parameters.Add(new SqlParameter("@id_ajuste_balanza", IdAjusteBalanza));
+                        command.Parameters.Add(new SqlParameter("@od_orden_despacho", Od_OrdenDespcho));
+                        command.Parameters.Add(new SqlParameter("@sku", SKU));
+                        command.Parameters.Add(new SqlParameter("@producto", Producto));
+                        command.Parameters.Add(new SqlParameter("@unidades_estimadas", Unidades));
+                        command.Parameters.Add(new SqlParameter("@peso_estimado", Peso));
+                        int rowsAdded = command.ExecuteNonQuery();
+                        ConexionSql.Close();
+                        if (rowsAdded < 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
                 }
 
             }

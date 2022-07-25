@@ -19,3 +19,9 @@ C:\Users\User\Documents\GitHub\PronacaAlmacenes\Web Service\Datos\bin\Debug\Dato
 C:\Users\User\Documents\GitHub\PronacaAlmacenes\Web Service\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
 C:\Users\User\Documents\GitHub\PronacaAlmacenes\Web Service\Datos\obj\Debug\Datos.dll
 C:\Users\User\Documents\GitHub\PronacaAlmacenes\Web Service\Datos\obj\Debug\Datos.pdb
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\Web Service\Datos\bin\Debug\Datos.dll
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\Web Service\Datos\bin\Debug\Datos.pdb
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\Web Service\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\Web Service\Datos\obj\Debug\Datos.dll
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\Web Service\Datos\obj\Debug\Datos.pdb
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\Web Service\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache

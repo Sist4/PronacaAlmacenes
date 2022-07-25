@@ -12,7 +12,7 @@ Public Class Datos_Consultas
 
     'consulta operador -> QO,O 
     Public Function Consulta_Usuario(Usuario As String, Pass As String) As String
-        Dim Respuesta As String
+        Dim Respuesta As String = ""
         Try
             Using ConexionSql = New SqlConnection(CadenaSql.String_Conexion())
                 ComandoSql = New SqlCommand("select * from usuarios where id_usu='" & Usuario & "' and pss_usu='" & Pass & "'", ConexionSql)
@@ -24,6 +24,8 @@ Public Class Datos_Consultas
                     Respuesta = Chr(21) & "Usuario no encontrado"
                 End If
             End Using
+        Catch ex As Exception
+            GuardarError(ex.Message, ex.StackTrace)
         Finally
             If ConexionSql IsNot Nothing AndAlso ConexionSql.State <> ConnectionState.Closed Then
                 ConexionSql.Close()
@@ -42,6 +44,8 @@ Public Class Datos_Consultas
                 ConexionSql.Close()
                 SqlConnection.ClearAllPools()
             End Using
+        Catch ex As Exception
+            GuardarError(ex.Message, ex.StackTrace)
         Finally
             If ConexionSql IsNot Nothing AndAlso ConexionSql.State <> ConnectionState.Closed Then
                 ConexionSql.Close()
@@ -63,6 +67,8 @@ Public Class Datos_Consultas
                 ConexionSql.Close()
                 SqlConnection.ClearAllPools()
             End Using
+        Catch ex As Exception
+            GuardarError(ex.Message, ex.StackTrace)
         Finally
             If ConexionSql IsNot Nothing AndAlso ConexionSql.State <> ConnectionState.Closed Then
                 ConexionSql.Close()
@@ -84,6 +90,8 @@ Public Class Datos_Consultas
                 ConexionSql.Close()
                 SqlConnection.ClearAllPools()
             End Using
+        Catch ex As Exception
+            GuardarError(ex.Message, ex.StackTrace)
         Finally
             If ConexionSql IsNot Nothing AndAlso ConexionSql.State <> ConnectionState.Closed Then
                 ConexionSql.Close()
@@ -103,6 +111,8 @@ Public Class Datos_Consultas
                 ConexionSql.Close()
                 SqlConnection.ClearAllPools()
             End Using
+        Catch ex As Exception
+            GuardarError(ex.Message, ex.StackTrace)
         Finally
             If ConexionSql IsNot Nothing AndAlso ConexionSql.State <> ConnectionState.Closed Then
                 ConexionSql.Close()
@@ -122,6 +132,8 @@ Public Class Datos_Consultas
                 ConexionSql.Close()
                 SqlConnection.ClearAllPools()
             End Using
+        Catch ex As Exception
+            GuardarError(ex.Message, ex.StackTrace)
         Finally
             If ConexionSql IsNot Nothing AndAlso ConexionSql.State <> ConnectionState.Closed Then
                 ConexionSql.Close()
@@ -133,7 +145,7 @@ Public Class Datos_Consultas
     Public Function Nombre_ProductoTemporal(Cod_Producto As String, Orden_Despacho As String, Establecimiento As String) As String
         Dim Respuesta As String = ""
         Try
-            Respuesta = "SELECT CONCAT(producto,';','/',unidades,';',peso,';') FROM TransaccionesTemporales INNER JOIN Cabecera ON TransaccionesTemporales.Od_OrdenDespcho=Cabecera.Od_OrdenDespcho WHERE TransaccionesTemporales.SKU='" & Cod_Producto & "' AND  Cabecera.Od_OrdenDespcho='" & Orden_Despacho & "' AND tra_estado ='A' AND Cabecera.IdEstablecimiento='" & Establecimiento & "' "
+            Respuesta = "SELECT CONCAT(Producto,';','/',UnidadesEstimadas,';',PesoEstimado,';') FROM TransaccionesTemporales INNER JOIN Cabecera ON TransaccionesTemporales.Od_OrdenDespcho=Cabecera.Od_OrdenDespcho WHERE TransaccionesTemporales.SKU='" & Cod_Producto & "' AND  Cabecera.Od_OrdenDespcho='" & Orden_Despacho & "' AND tra_estado ='A' AND Cabecera.IdEstablecimiento='" & Establecimiento & "' "
             Using ConexionSql = New SqlConnection(CadenaSql.String_Conexion())
                 ConexionSql.Open()
                 Dim Comando_Sql As SqlCommand = New SqlCommand(Respuesta, ConexionSql)
@@ -141,6 +153,8 @@ Public Class Datos_Consultas
                 ConexionSql.Close()
                 SqlConnection.ClearAllPools()
             End Using
+        Catch ex As Exception
+            GuardarError(ex.Message, ex.StackTrace)
         Finally
             If ConexionSql IsNot Nothing AndAlso ConexionSql.State <> ConnectionState.Closed Then
                 ConexionSql.Close()
@@ -166,7 +180,8 @@ Public Class Datos_Consultas
                 ConexionSql.Close()
                 SqlConnection.ClearAllPools()
             End Using
-
+        Catch ex As Exception
+            GuardarError(ex.Message, ex.StackTrace)
         Finally
 
             If ConexionSql IsNot Nothing AndAlso ConexionSql.State <> ConnectionState.Closed Then
@@ -190,7 +205,8 @@ Public Class Datos_Consultas
                 ConexionSql.Close()
                 SqlConnection.ClearAllPools()
             End Using
-
+        Catch ex As Exception
+            GuardarError(ex.Message, ex.StackTrace)
         Finally
 
             If ConexionSql IsNot Nothing AndAlso ConexionSql.State <> ConnectionState.Closed Then
@@ -214,7 +230,8 @@ Public Class Datos_Consultas
                 ConexionSql.Close()
                 SqlConnection.ClearAllPools()
             End Using
-
+        Catch ex As Exception
+            GuardarError(ex.Message, ex.StackTrace)
         Finally
 
             If ConexionSql IsNot Nothing AndAlso ConexionSql.State <> ConnectionState.Closed Then
@@ -237,7 +254,8 @@ Public Class Datos_Consultas
                 ConexionSql.Close()
                 SqlConnection.ClearAllPools()
             End Using
-
+        Catch ex As Exception
+            GuardarError(ex.Message, ex.StackTrace)
         Finally
 
             If ConexionSql IsNot Nothing AndAlso ConexionSql.State <> ConnectionState.Closed Then
@@ -263,7 +281,8 @@ Public Class Datos_Consultas
                 ConexionSql.Close()
                 SqlConnection.ClearAllPools()
             End Using
-
+        Catch ex As Exception
+            GuardarError(ex.Message, ex.StackTrace)
         Finally
 
             If ConexionSql IsNot Nothing AndAlso ConexionSql.State <> ConnectionState.Closed Then
@@ -299,6 +318,8 @@ Public Class Datos_Consultas
                 Respuesta = ComandoSql.ExecuteNonQuery()
                 ConexionSql.Close()
             End Using
+        Catch ex As Exception
+            GuardarError(ex.Message, ex.StackTrace)
         Finally
             If ConexionSql IsNot Nothing AndAlso ConexionSql.State <> ConnectionState.Closed Then
                 ConexionSql.Close()
@@ -330,6 +351,8 @@ Public Class Datos_Consultas
                 Respuesta = ComandoSql.ExecuteNonQuery()
                 ConexionSql.Close()
             End Using
+        Catch ex As Exception
+            GuardarError(ex.Message, ex.StackTrace)
         Finally
             If ConexionSql IsNot Nothing AndAlso ConexionSql.State <> ConnectionState.Closed Then
                 ConexionSql.Close()
@@ -365,6 +388,8 @@ Public Class Datos_Consultas
                 Respuesta = ComandoSql.ExecuteNonQuery()
                 ConexionSql.Close()
             End Using
+        Catch ex As Exception
+            GuardarError(ex.Message, ex.StackTrace)
         Finally
             If ConexionSql IsNot Nothing AndAlso ConexionSql.State <> ConnectionState.Closed Then
                 ConexionSql.Close()
@@ -390,7 +415,8 @@ Public Class Datos_Consultas
                 ConexionSql.Close()
                 SqlConnection.ClearAllPools()
             End Using
-
+        Catch ex As Exception
+            GuardarError(ex.Message, ex.StackTrace)
         Finally
 
             If ConexionSql IsNot Nothing AndAlso ConexionSql.State <> ConnectionState.Closed Then
@@ -417,7 +443,8 @@ Public Class Datos_Consultas
                 ConexionSql.Close()
                 SqlConnection.ClearAllPools()
             End Using
-
+        Catch ex As Exception
+            GuardarError(ex.Message, ex.StackTrace)
         Finally
 
             If ConexionSql IsNot Nothing AndAlso ConexionSql.State <> ConnectionState.Closed Then
@@ -458,7 +485,67 @@ Public Class Datos_Consultas
                 Comando_Sql.Parameters.Add(New SqlParameter("@orden", Orden))
                 Comando_Sql.Parameters.Add(New SqlParameter("@producto", Producto))
                 Comando_Sql.Parameters.Add(New SqlParameter("@estado", Estado))
-                Dato_Almacenado = ComandoSql.ExecuteNonQuery()
+                Dato_Almacenado = Comando_Sql.ExecuteNonQuery()
+                ConexionSql.Close()
+                SqlConnection.ClearAllPools()
+
+            End Using
+        Catch ex As Exception
+            GuardarError(ex.Message, ex.StackTrace)
+        Finally
+
+            If ConexionSql IsNot Nothing AndAlso ConexionSql.State <> ConnectionState.Closed Then
+                ConexionSql.Close()
+            End If
+        End Try
+
+        Return Dato_Almacenado
+    End Function
+
+    Public Function GuardarXML(Establecimiento As String, Orden As String, SKU As String, Ajuste As String, Enviado As String, Recibido As String, Fase As String, Estado As String) As Integer
+        Dim Dato_Almacenado As Integer = 0
+        Dim consulta As String = ""
+        Try
+            consulta = "INSERT INTO Mensajes VALUES(GETDATE(),@establecimiento,@orden,@sku,@ajuste,@XMLEnviado,@XMLRecibido,@fase,@estado)"
+            Using ConexionSql = New SqlConnection(CadenaSql.String_Conexion())
+                ConexionSql.Open()
+                Dim Comando_Sql As SqlCommand = New SqlCommand(consulta, ConexionSql)
+                Comando_Sql.Parameters.Add(New SqlParameter("@establecimiento", Establecimiento))
+                Comando_Sql.Parameters.Add(New SqlParameter("@orden", Orden))
+                Comando_Sql.Parameters.Add(New SqlParameter("@sku", SKU))
+                Comando_Sql.Parameters.Add(New SqlParameter("@ajuste", Ajuste))
+                Comando_Sql.Parameters.Add(New SqlParameter("@XMLEnviado", Enviado))
+                Comando_Sql.Parameters.Add(New SqlParameter("@XMLRecibido", Recibido))
+                Comando_Sql.Parameters.Add(New SqlParameter("@fase", Fase))
+                Comando_Sql.Parameters.Add(New SqlParameter("@estado", Estado))
+                Dato_Almacenado = Comando_Sql.ExecuteNonQuery()
+                ConexionSql.Close()
+                SqlConnection.ClearAllPools()
+
+            End Using
+        Catch ex As Exception
+            GuardarError(ex.Message, ex.StackTrace)
+        Finally
+
+            If ConexionSql IsNot Nothing AndAlso ConexionSql.State <> ConnectionState.Closed Then
+                ConexionSql.Close()
+            End If
+        End Try
+
+        Return Dato_Almacenado
+    End Function
+
+    Public Function GuardarError(Info As String, Trace As String) As String
+        Dim Dato_Almacenado As Integer = 0
+        Dim consulta As String = ""
+        Try
+            consulta = "INSERT INTO Errores VALUES(GETDATE(),@info,@trace)"
+            Using ConexionSql = New SqlConnection(CadenaSql.String_Conexion())
+                ConexionSql.Open()
+                Dim Comando_Sql As SqlCommand = New SqlCommand(consulta, ConexionSql)
+                Comando_Sql.Parameters.Add(New SqlParameter("@info", Info))
+                Comando_Sql.Parameters.Add(New SqlParameter("@trace", Trace))
+                Dato_Almacenado = Comando_Sql.ExecuteNonQuery()
                 ConexionSql.Close()
                 SqlConnection.ClearAllPools()
 
@@ -473,6 +560,4 @@ Public Class Datos_Consultas
 
         Return Dato_Almacenado
     End Function
-
-
 End Class

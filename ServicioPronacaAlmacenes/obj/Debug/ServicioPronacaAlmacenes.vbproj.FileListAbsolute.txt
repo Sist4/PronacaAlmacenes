@@ -1,0 +1,40 @@
+C:\Users\Sistemas\Documents\Visual Studio 2019\Proyectos\ServicioPronacaAlmacenes\obj\Debug\ServicioPronacaAlmacenes.Resources.resources
+C:\Users\Sistemas\Documents\Visual Studio 2019\Proyectos\ServicioPronacaAlmacenes\obj\Debug\ServicioPronacaAlmacenes.vbproj.GenerateResource.cache
+C:\Users\Sistemas\Documents\Visual Studio 2019\Proyectos\ServicioPronacaAlmacenes\obj\Debug\ServicioPronacaAlmacenes.vbproj.CoreCompileInputs.cache
+C:\Users\Sistemas\Documents\Visual Studio 2019\Proyectos\ServicioPronacaAlmacenes\bin\Debug\ServicioPronacaAlmacenes.exe.config
+C:\Users\Sistemas\Documents\Visual Studio 2019\Proyectos\ServicioPronacaAlmacenes\bin\Debug\ServicioPronacaAlmacenes.exe
+C:\Users\Sistemas\Documents\Visual Studio 2019\Proyectos\ServicioPronacaAlmacenes\bin\Debug\ServicioPronacaAlmacenes.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2019\Proyectos\ServicioPronacaAlmacenes\bin\Debug\ServicioPronacaAlmacenes.xml
+C:\Users\Sistemas\Documents\Visual Studio 2019\Proyectos\ServicioPronacaAlmacenes\obj\Debug\ServicioPronacaAlmacenes.exe
+C:\Users\Sistemas\Documents\Visual Studio 2019\Proyectos\ServicioPronacaAlmacenes\obj\Debug\ServicioPronacaAlmacenes.xml
+C:\Users\Sistemas\Documents\Visual Studio 2019\Proyectos\ServicioPronacaAlmacenes\obj\Debug\ServicioPronacaAlmacenes.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2019\Proyectos\ServicioPronacaAlmacenes\obj\Debug\ServicioPronacaAlmacenes.ProjectInstaller.resources
+C:\Users\Sistemas\Documents\Visual Studio 2019\Proyectos\ServicioPronacaAlmacenes\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\Sistemas\Documents\Visual Studio 2019\Proyectos\ServicioPronacaAlmacenes\bin\Debug\System.Security.AccessControl.dll
+C:\Users\Sistemas\Documents\Visual Studio 2019\Proyectos\ServicioPronacaAlmacenes\bin\Debug\System.Security.Permissions.dll
+C:\Users\Sistemas\Documents\Visual Studio 2019\Proyectos\ServicioPronacaAlmacenes\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\Sistemas\Documents\Visual Studio 2019\Proyectos\ServicioPronacaAlmacenes\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\Sistemas\Documents\Visual Studio 2019\Proyectos\ServicioPronacaAlmacenes\bin\Debug\System.Security.AccessControl.xml
+C:\Users\Sistemas\Documents\Visual Studio 2019\Proyectos\ServicioPronacaAlmacenes\bin\Debug\System.Security.Permissions.xml
+C:\Users\Sistemas\Documents\Visual Studio 2019\Proyectos\ServicioPronacaAlmacenes\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\Sistemas\Documents\Visual Studio 2019\Proyectos\ServicioPronacaAlmacenes\obj\Debug\ServicioPronacaAlmacenes.vbproj.CopyComplete
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\ServicioPronacaAlmacenes\bin\Debug\ServicioPronacaAlmacenes.exe.config
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\ServicioPronacaAlmacenes\bin\Debug\ServicioPronacaAlmacenes.exe
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\ServicioPronacaAlmacenes\bin\Debug\ServicioPronacaAlmacenes.pdb
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\ServicioPronacaAlmacenes\bin\Debug\ServicioPronacaAlmacenes.xml
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\ServicioPronacaAlmacenes\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\ServicioPronacaAlmacenes\bin\Debug\System.Security.AccessControl.dll
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\ServicioPronacaAlmacenes\bin\Debug\System.Security.Permissions.dll
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\ServicioPronacaAlmacenes\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\ServicioPronacaAlmacenes\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\ServicioPronacaAlmacenes\bin\Debug\System.Security.AccessControl.xml
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\ServicioPronacaAlmacenes\bin\Debug\System.Security.Permissions.xml
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\ServicioPronacaAlmacenes\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\ServicioPronacaAlmacenes\obj\Debug\ServicioPronacaAlmacenes.Resources.resources
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\ServicioPronacaAlmacenes\obj\Debug\ServicioPronacaAlmacenes.ProjectInstaller.resources
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\ServicioPronacaAlmacenes\obj\Debug\ServicioPronacaAlmacenes.vbproj.GenerateResource.cache
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\ServicioPronacaAlmacenes\obj\Debug\ServicioPronacaAlmacenes.vbproj.CoreCompileInputs.cache
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\ServicioPronacaAlmacenes\obj\Debug\ServicioPronacaAlmacenes.vbproj.CopyComplete
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\ServicioPronacaAlmacenes\obj\Debug\ServicioPronacaAlmacenes.exe
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\ServicioPronacaAlmacenes\obj\Debug\ServicioPronacaAlmacenes.xml
+C:\Users\PrecitrolSist\OneDrive\Documentos\GitHub\PronacaAlmacenes\ServicioPronacaAlmacenes\obj\Debug\ServicioPronacaAlmacenes.pdb
