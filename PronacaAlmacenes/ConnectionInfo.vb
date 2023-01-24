@@ -124,7 +124,8 @@ Public Class ConnectionInfo
 
 
         Catch ex As Exception
-
+            MessageBox.Show("error: " + ex.Message)
+            Consultas.WriteToEventLog(ex.StackTrace, "Receptor Pronaca Almacenes", EventLogEntryType.Error, ex.Message)
         End Try
     End Function
 
@@ -211,7 +212,8 @@ Public Class ConnectionInfo
                 Dim Consulta_Dato As String() = (Datos_Recibidos.Replace(",", ";")).Split(";")
 
                 Select Case Consulta_Dato(0)
-                    Case "QO" 'Operador Específico
+                    Case "QO" 'CONSULTA DE OPERADOR
+                        'operador;clave;
                         Dim Respuesta As String = Consultas.Consulta_Usuario(Consulta_Dato(1), Consulta_Dato(2))
                         If Respuesta.Equals("") Then
                             info.SendMessage(Chr(21) & "Usuario No Encontrado")
@@ -220,52 +222,25 @@ Public Class ConnectionInfo
                             info.SendMessage(Respuesta)
                             Exit Sub
                         End If
-                        '  Exit Sub
-                        'Frm_Receptor.AppendOutput(Respuesta)'
-                    Case "QP" 'PRODUCTO
-                        'codigo producto; orden despacho; ID establecimiento
-                        Dim Respuesta As String = Consultas.Nombre_ProductoTemporal(Consulta_Dato(1), Consulta_Dato(2), Consulta_Dato(3))
 
-                        If Respuesta.Equals("") Then
-                            info.SendMessage(Chr(21) & "No Exite Informacion")
-                            info.AwaitData()
-                            Exit Sub
 
-                        Else
-                            ' info.SendMessage(Respuesta + "; /3;2;")
-                            info.SendMessage(Respuesta)
-                            info.AwaitData()
-                            Exit Sub
+                    Case "QS" 'SALTAR PRODUCTO
+                        'sku;orden despacho; Id establecimiento;
+                        'recibo el producto actual
+                        'devuelvo el siguiente producto
+                        Dim NumeroItemsPendientes As Integer = 0
+                        Dim siguienteItemA As String = Consultas.SiguienteProductoTemporal("A", Consulta_Dato(1), Consulta_Dato(2), Consulta_Dato(3))
+                        'Dim primerItemA As String = Consultas.ProductoTemporal("A", Consulta_Dato(1), Consulta_Dato(2))
 
-                        End If
+                        info.SendMessage(siguienteItemA)
+
 
                         Exit Sub
 
-                    Case "QT" 'TARA DEL PRODUCTO
-
-
-                        Dim Respuesta As String = Consultas.Consulta_Tara(Consulta_Dato(1))
-                        If Respuesta.Equals("") Then
-                            info.SendMessage(Consulta_Dato(1))
-                            'info.SendMessage(Chr(21) & "Tara No Encontrada")
-                            info.AwaitData()
-                            Exit Sub
-
-                        Else
-                            '  info.SendMessage(Respuesta)
-                            info.SendMessage(Consulta_Dato(1))
-                            info.AwaitData()
-                            Exit Sub
-
-                        End If
-                        '  Exit Sub
-
-                    Case "QS" 'CODIGO DEL SUPERVISOR
-                        Exit Sub
-
-                    Case "QD" 'ORDEN DEL DESPACHO
+                    Case "QD" 'CONSULTAR ORDEN DE DESPACHO
                         '0;ID balanza
-                        'orden despacho;ID establecimiento ;
+                        'recibo el id del establecimiento
+                        'devuelvo las ordenes pendientes
                         If Consulta_Dato(1).Equals("0") Then
                             Dim Respuesta As String = Consultas.Consulta_OrdenesdeProduccion(Consulta_Dato(2))
                             If Respuesta.Equals("") Then
@@ -278,141 +253,57 @@ Public Class ConnectionInfo
 
                             End If
                         Else
-                            Dim Respuesta As String = Consultas.N_PesajesTemporales(Consulta_Dato(1), Consulta_Dato(2))
-                            If Respuesta.Equals("0") Or Respuesta = Nothing Then
-                                info.SendMessage(Chr(21) & "No hay ITEMS Para Pesar")
-                                Exit Sub
-
+                            'orden despacho;ID establecimiento ;
+                            'recibo la orden, id de establecimiento
+                            'devuelvo el primer producto de la orden
+                            Dim numeroItemsA As Integer = Consultas.N_PesajesTemporales("A", Consulta_Dato(1), Consulta_Dato(2))
+                            Dim primerItemA As String = Consultas.ProductoTemporal("A", Consulta_Dato(1), Consulta_Dato(2))
+                            If (numeroItemsA <> 0) Then
+                                info.SendMessage(primerItemA)
                             Else
-                                info.SendMessage(Respuesta)
-                                Exit Sub
-
+                                info.SendMessage(Chr(21) & "No hay ITEMS Para Pesar")
                             End If
 
                         End If
                         'Exit Sub
 
-                    Case "PA"
+                    Case "PA" 'CONSULTA PESAJE PARCIAL
                         'ID balanza;izq asd;numero secuencial+1;operador;cod prod; orden despacho;tara;peso;kilgramos;cantidad unidades;peso gavetas;lote
-                        Dim Estado As String = "A"
-                        Dim Respuesta As String = Consultas.Gestion_Pesos(Consulta_Dato(1), Consulta_Dato(3), Consulta_Dato(4), Consulta_Dato(5), Consulta_Dato(6), Consulta_Dato(7), Consulta_Dato(8), Consulta_Dato(10), Estado, Consulta_Dato(11), Consulta_Dato(12))
-                        info.SendMessage("OK;")
+                        Dim Respuesta As String = Consultas.Gestion_Pesos("A", Consulta_Dato(1), Consulta_Dato(3), Consulta_Dato(4), Consulta_Dato(5), Consulta_Dato(6), Consulta_Dato(7), Consulta_Dato(8), Consulta_Dato(10), Consulta_Dato(11), Consulta_Dato(12))
+                        Dim numeroItemsA As Integer = Consultas.N_PesajesTemporales("A", Consulta_Dato(6), Consulta_Dato(1))
+                        Dim siguienteItemA As String = Consultas.SiguienteProductoTemporal("A", Consulta_Dato(5), Consulta_Dato(6), Consulta_Dato(1))
+                        If (numeroItemsA <> 0) Then
+                            info.SendMessage(siguienteItemA)
+                        Else
+                            info.SendMessage("OK;")
+                        End If
 
-                    Case "P"
+                    Case "P" 'CONSULTA PESAJE COMPLETO
                         'P;A;D;344;ADM1;2;OR002;1234;26.15; Kg.;0;
                         'P;A;D;344;ADM1;000001;RC-10000;1234;26.15;Kg.;0;
                         'P;16;R;4;1;03053543;TRA-1054253;1;48.92; Kg.;2;2.260;123; 
                         'P;16;R;4;1;8595;TRA-1066572;1;2;kg.;2;2.60;1234;
                         'P;16;R;79;1;8595;TRA-1066572;0;10;Kg.;10;2.9;1234;
-                        Dim Estado As String = "P"
-                        Dim Respuesta As String = Consultas.Gestion_Pesos(Consulta_Dato(1), Consulta_Dato(3), Consulta_Dato(4), Consulta_Dato(5), Consulta_Dato(6), Consulta_Dato(7), Consulta_Dato(8), Consulta_Dato(10), Estado, Consulta_Dato(11), Consulta_Dato(12))
+                        Dim Respuesta As String = Consultas.Gestion_Pesos("P", Consulta_Dato(1), Consulta_Dato(3), Consulta_Dato(4), Consulta_Dato(5), Consulta_Dato(6), Consulta_Dato(7), Consulta_Dato(8), Consulta_Dato(10), Consulta_Dato(11), Consulta_Dato(12))
                         Dim unidadesConfirmadas As Integer = Consultas.Consultar_UnidadesConfirmadas(Consulta_Dato(5), Consulta_Dato(6))
                         Dim pesoConfirmado As Double = Consultas.Consultar_PesoConfirmado(Consulta_Dato(5), Consulta_Dato(6))
                         Dim loteConfirmado As String = Consultas.Consultar_LoteConfirmado(Consulta_Dato(5), Consulta_Dato(6))
-                        info.SendMessage("OK;")
-                        Dim NumeroPesajes As String = Consultas.N_PesajesTemporales(Consulta_Dato(6), Consulta_Dato(1))
-                        If NumeroPesajes.Equals("0") Or NumeroPesajes = Nothing Then
-                            envioXML(Consulta_Dato, "PF", unidadesConfirmadas, pesoConfirmado, loteConfirmado)
+                        Dim numeroItemsA As Integer = Consultas.N_PesajesTemporales("A", Consulta_Dato(6), Consulta_Dato(1))
+                        Dim siguienteItemA As String = Consultas.SiguienteProductoTemporal("A", Consulta_Dato(5), Consulta_Dato(6), Consulta_Dato(1))
+                        If (numeroItemsA <> 0) Then
+                            info.SendMessage(siguienteItemA)
+                        Else
+                            info.SendMessage("OK;")
+                        End If
+
+                        If (numeroItemsA <> 0) Then
+                            envioXML(Consulta_Dato, "P", unidadesConfirmadas, pesoConfirmado, loteConfirmado)
                             Exit Sub
                         Else
-                            envioXML(Consulta_Dato, "P", unidadesConfirmadas, pesoConfirmado, loteConfirmado)
+                            envioXML(Consulta_Dato, "PF", unidadesConfirmadas, pesoConfirmado, loteConfirmado)
                             Exit Sub
 
                         End If
-
-
-                    Case "R"
-                        'id; operador
-                        'armamos el xml para enviar todo
-                        '***********************************************************
-
-                        Dim IdAjusteBalanza As String
-                        Dim TipoTransaccion As String
-                        Dim idEmpresa As String
-                        Dim IdEstablecimiento As String
-                        Dim IdPuntoOperacion As String
-
-                        Dim StringCabecera As String
-
-                        Dim Orden As String
-                        Dim Codigo As String
-
-                        Dim Fase_f As Integer
-                        Dim Estado_f As Integer
-
-                        'Dim IdAjuste As String
-                        Dim Datos_Clientes As DataSet = Consultas.CabeceraRetrasmision()
-                        For Each myReader As DataRow In Datos_Clientes.Tables(0).Rows
-                            idEmpresa = myReader(0).ToString()
-                            IdEstablecimiento = myReader(1).ToString()
-                            IdPuntoOperacion = myReader(2).ToString()
-                            IdAjusteBalanza = myReader(3).ToString()
-                            TipoTransaccion = myReader(4).ToString()
-
-                            Orden = Consulta_Dato(6).ToString()
-                            Codigo = Consulta_Dato(5).ToString()
-                            StringCabecera += Cabecera(IdAjusteBalanza, TipoTransaccion, idEmpresa, IdEstablecimiento, IdPuntoOperacion, "1", "1", "", DateTime.Now.ToString("yyyy-MM-dd"))
-                        Next
-
-
-
-                        Dim StringDetatlle As String
-
-                        Dim Datos_Detalle As DataSet = Consultas.DetalleRetrasmision()
-                        For Each myReader As DataRow In Datos_Detalle.Tables(0).Rows
-
-                            IdAjusteBalanza = myReader(0).ToString()
-                            Dim IdAjuste As String = myReader(1).ToString()
-                            Dim CodigoLN As String = myReader(2).ToString()
-                            Dim SKU As String = myReader(3).ToString()
-                            Dim PesoConfirmado As String = myReader(4).ToString()
-                            Dim TarCodigo As String = myReader(5).ToString()
-                            Dim TraBalanza As String = myReader(6).ToString()
-                            Dim TraEstado As String = myReader(7).ToString()
-                            Dim TraFecha As String = myReader(8) '.Date.Now.ToString("yyyy-MM-dd")
-                            Dim TraOperador As String = myReader(9).ToString()
-                            Dim UnidadesConfirmadas As String = myReader(10).ToString()
-                            Dim Lote As String = myReader(13).ToString()
-                            Dim Fase As String = "1"
-                            Dim Estado As String = "1"
-                            Dim Errorr As String = ""
-                            Dim FechaProceso As String = DateTime.Now.ToString("yyyy-MM-dd")
-                            StringDetatlle += Detalle(IdAjusteBalanza, IdAjuste, CodigoLN, SKU, PesoConfirmado, TarCodigo, TraBalanza, TraEstado, TraFecha, TraOperador, UnidadesConfirmadas, Lote, Fase, Estado, Errorr, FechaProceso)
-                        Next
-
-
-                        Dim servicioPortClient As New WsRp3.Proporcionar_servicioPortClient()
-                        Dim sendBalanceData As New WsRp3.SendBalanceData()
-                        servicioPortClient.ClientCredentials.UserName.UserName = Usuario
-                        servicioPortClient.ClientCredentials.UserName.Password = Pass
-                        '***********************************************************
-                        Dim StringXml As String = "<mrm:GesImpPesBal xmlns:mrm=""http://ln.gesalm.integracion.pronaca.com.ec"">"
-                        StringXml += "<ControlProceso>"
-                        StringXml += "<CodigoCompania>602</CodigoCompania>"
-                        StringXml += "<CodigoSistema>BALANZAS</CodigoSistema>"
-                        StringXml += "<CodigoServicio>GESIMPPESBAL</CodigoServicio>"
-                        StringXml += "<Proceso>ACTUALIZAR</Proceso><Resultado></Resultado>"
-                        StringXml += "</ControlProceso>"
-                        StringXml += "<Cabecera>"
-                        StringXml += StringCabecera
-                        StringXml += "</Cabecera>"
-                        StringXml += "<DetallesCabecera>"
-                        StringXml += StringDetatlle
-                        StringXml += "</DetallesCabecera>"
-                        StringXml += "</mrm:GesImpPesBal>"
-                        sendBalanceData.value = StringXml
-                        Dim response As WsRp3.SendBalanceDataResponse = servicioPortClient.Proporcionar_servicio(sendBalanceData)
-                        Dim XmlRespuesta As String = response.SendBalanceDataResult
-                        '**********************************Comparamos la Respuestas***************************
-                        '**** leemos la respuesta xml****
-                        leer_Xml(XmlRespuesta, Orden, Codigo, Fase_f, Estado_f)
-                        Consultas.GuardarXML(IdEstablecimiento, Orden, Codigo, IdAjusteBalanza, StringXml, XmlRespuesta, Fase_f, Estado_f)
-
-                        'MsgBox(StringXml)
-
-
-
-
 
                 End Select
                 'The example responds to all data reception with the number of bytes received;
@@ -432,7 +323,9 @@ Public Class ConnectionInfo
         Catch ex As Exception
             'info.Client.Close()
             '  info._LastReadLength = -1
+            MessageBox.Show("error: " + ex.Message)
             Consultas.GuardarError(ex.Message, ex.StackTrace)
+            Consultas.WriteToEventLog(ex.StackTrace, "Receptor Pronaca Almacenes", EventLogEntryType.Error, ex.Message)
             Exit Sub
 
         End Try
@@ -529,10 +422,11 @@ Public Class ConnectionInfo
             'Respuesta = Consultas.Gestion_Pesos(Consulta_Dato(1), Consulta_Dato(3), Consulta_Dato(4), Consulta_Dato(5), Consulta_Dato(6), Consulta_Dato(7), Consulta_Dato(8), Consulta_Dato(10), "C")
 
             'envío
-            'MsgBox(XmlRespuesta)
+            MsgBox(XmlRespuesta)
 
         Catch ex As Exception
             Consultas.GuardarError(ex.Message, ex.StackTrace)
+            Consultas.WriteToEventLog(ex.StackTrace, "Receptor Pronaca Almacenes", EventLogEntryType.Error, ex.Message)
         End Try
     End Sub
 

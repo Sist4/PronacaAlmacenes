@@ -1,5 +1,4 @@
-﻿
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 
 Public Class Datos_Consultas
     Dim ConexionSql As SqlConnection = Nothing
@@ -100,14 +99,15 @@ Public Class Datos_Consultas
         Return Respuesta
     End Function
 
-    Public Function N_PesajesTemporales(Orden_Despacho As String, Establecimiento As String) As String
-        Dim Respuesta As String = ""
+    Public Function N_PesajesTemporales(Estado As String, Orden_Despacho As String, Establecimiento As String) As Integer
+        Dim Consulta_base As String
+        Dim Respuesta As Integer = 0
         Try
-            Respuesta = "SELECT COUNT(*)FROM TransaccionesTemporales INNER JOIN Cabecera ON TransaccionesTemporales.Od_OrdenDespcho=Cabecera.Od_OrdenDespcho WHERE cabecera.Od_OrdenDespcho= '" & Orden_Despacho & "' AND IdEstablecimiento='" & Establecimiento & "' AND TransaccionesTemporales.Tra_Estado='A'"
+            Consulta_base = "SELECT COUNT(*)FROM TransaccionesTemporales INNER JOIN Cabecera ON TransaccionesTemporales.Od_OrdenDespcho=Cabecera.Od_OrdenDespcho WHERE cabecera.Od_OrdenDespcho= '" & Orden_Despacho & "' AND IdEstablecimiento='" & Establecimiento & "' AND TransaccionesTemporales.Tra_Estado='" & Estado & "' "
             Using ConexionSql = New SqlConnection(CadenaSql.String_Conexion())
                 ConexionSql.Open()
-                Dim Comando_Sql As SqlCommand = New SqlCommand(Respuesta, ConexionSql)
-                Respuesta = Convert.ToString(Comando_Sql.ExecuteScalar())
+                Dim Comando_Sql As New SqlCommand(Consulta_base, ConexionSql)
+                Respuesta = Convert.ToInt32(Comando_Sql.ExecuteScalar())
                 ConexionSql.Close()
                 SqlConnection.ClearAllPools()
             End Using
@@ -126,7 +126,7 @@ Public Class Datos_Consultas
         Try
             Using ConexionSql = New SqlConnection(CadenaSql.String_Conexion())
                 'ComandoSql = New SqlCommand("select Producto from Transacciones where SKU='" & Cod_Producto & "' and  Od_OrdenDespcho='" & Orden_Despacho & "' and tra_estado ='A' ", ConexionSql)
-                ComandoSql = New SqlCommand("select concat(producto,';','/',unidades,';',peso,';') from Transacciones inner join Cabecera on Transacciones.IdAjusteBalanza=Cabecera.IdAjusteBalanza where Transacciones.SKU='" & Cod_Producto & "' and  Cabecera.Od_OrdenDespcho='" & Orden_Despacho & "' and tra_estado ='A' ", ConexionSql)
+                ComandoSql = New SqlCommand("select concat(Producto,';','/',UnidadesEstimadas,';',PesoEstimado,';') from Transacciones inner join Cabecera on Transacciones.IdAjusteBalanza=Cabecera.IdAjusteBalanza where Transacciones.SKU='" & Cod_Producto & "' and  Cabecera.Od_OrdenDespcho='" & Orden_Despacho & "' and tra_estado ='A' ", ConexionSql)
                 ConexionSql.Open()
                 Respuesta = Convert.ToString(ComandoSql.ExecuteScalar())
                 ConexionSql.Close()
@@ -297,7 +297,7 @@ Public Class Datos_Consultas
 
 
 
-    Public Function Gestion_Pesos(ID_Indicador As String, secuencial As String, Cod_Operador As String, Cod_Producto As String, Orden_Produccion As String, Cod_Tara As String, Peso As String, Unidades As String, estado As String, pes_gaveta As String, lote As String) As Integer
+    Public Function Gestion_Pesos(Estado As String, ID_Indicador As String, secuencial As String, Cod_Operador As String, Cod_Producto As String, Orden_Produccion As String, Cod_Tara As String, Peso As String, Unidades As String, pes_gaveta As String, lote As String) As Integer
         Dim Respuesta As Integer
         Try
             '*******************TIPOS DE ESTADO ******************
@@ -313,7 +313,7 @@ Public Class Datos_Consultas
 
             'End If
             Using ConexionSql = New SqlConnection(CadenaSql.String_Conexion())
-                ComandoSql = New SqlCommand("exec P_Pesaje  '" & ID_Indicador & "','" & secuencial & "','" & Cod_Operador & "','" & Cod_Producto & "','" & Orden_Produccion & "','" & Cod_Tara & "','" & Peso & "','" & Unidades & "','" & estado & "','" & pes_gaveta & "','" & lote & "'", ConexionSql)
+                ComandoSql = New SqlCommand("exec P_Pesaje  '" & ID_Indicador & "','" & secuencial & "','" & Cod_Operador & "','" & Cod_Producto & "','" & Orden_Produccion & "','" & Cod_Tara & "','" & Peso & "','" & Unidades & "','" & Estado & "','" & pes_gaveta & "','" & lote & "'", ConexionSql)
                 ConexionSql.Open()
                 Respuesta = ComandoSql.ExecuteNonQuery()
                 ConexionSql.Close()
@@ -559,5 +559,102 @@ Public Class Datos_Consultas
         End Try
 
         Return Dato_Almacenado
+    End Function
+
+    Public Function ProductoPesado(Cod_Producto As String, Orden_Despacho As String, Establecimiento As String) As String
+        Dim consulta As String = ""
+        Dim Respuesta As String = ""
+        Try
+            consulta = "SELECT sku FROM Transacciones INNER JOIN Cabecera ON Transacciones.Od_OrdenDespcho=Cabecera.Od_OrdenDespcho WHERE sku=@sku AND Transacciones.Od_OrdenDespcho=@orden AND Tra_Estado='P' AND IdEstablecimiento=@establecimiento"
+            Using ConexionSql = New SqlConnection(CadenaSql.String_Conexion())
+                ConexionSql.Open()
+                Dim Comando_Sql As SqlCommand = New SqlCommand(consulta, ConexionSql)
+                Comando_Sql.Parameters.Add(New SqlParameter("@sku", Cod_Producto))
+                Comando_Sql.Parameters.Add(New SqlParameter("@orden", Orden_Despacho))
+                Comando_Sql.Parameters.Add(New SqlParameter("@establecimiento", Establecimiento))
+                Respuesta = Convert.ToString(Comando_Sql.ExecuteScalar())
+                ConexionSql.Close()
+                SqlConnection.ClearAllPools()
+
+            End Using
+        Catch ex As Exception
+            GuardarError(ex.Message, ex.StackTrace)
+        Finally
+            If ConexionSql IsNot Nothing AndAlso ConexionSql.State <> ConnectionState.Closed Then
+                ConexionSql.Close()
+            End If
+        End Try
+        Return Respuesta
+    End Function
+
+
+    Public Function MensajeXMLProductoPesado(Cod_Producto As String, Orden_Despacho As String, Establecimiento As String) As String
+        Dim consulta As String = ""
+        Dim Respuesta As String = ""
+        Try
+            consulta = "SELECT TOP(1) mensajeEnviado FROM Mensajes WHERE IdEstablecimiento=@establecimiento AND OrdenDespacho=@orden AND SKU=@sku ORDER BY Fecha DESC"
+            Using ConexionSql = New SqlConnection(CadenaSql.String_Conexion())
+                ConexionSql.Open()
+                Dim Comando_Sql As SqlCommand = New SqlCommand(consulta, ConexionSql)
+                Comando_Sql.Parameters.Add(New SqlParameter("@sku", Cod_Producto))
+                Comando_Sql.Parameters.Add(New SqlParameter("@orden", Orden_Despacho))
+                Comando_Sql.Parameters.Add(New SqlParameter("@establecimiento", Establecimiento))
+                Respuesta = Convert.ToString(Comando_Sql.ExecuteScalar())
+                ConexionSql.Close()
+                SqlConnection.ClearAllPools()
+
+            End Using
+        Catch ex As Exception
+            GuardarError(ex.Message, ex.StackTrace)
+        Finally
+            If ConexionSql IsNot Nothing AndAlso ConexionSql.State <> ConnectionState.Closed Then
+                ConexionSql.Close()
+            End If
+        End Try
+        Return Respuesta
+    End Function
+
+    Public Function ProductoTemporal(Estado As String, Orden_Despacho As String, Establecimiento As String) As String
+        Dim Respuesta As String = ""
+        Try
+            Using ConexionSql = New SqlConnection(CadenaSql.String_Conexion())
+                'ComandoSql = New SqlCommand("select Producto from Transacciones where SKU='" & Cod_Producto & "' and  Od_OrdenDespcho='" & Orden_Despacho & "' and tra_estado ='A' ", ConexionSql)
+                'ComandoSql = New SqlCommand("select concat(Producto,';','/',UnidadesEstimadas,';',PesoEstimado,';') from Transacciones inner join Cabecera on Transacciones.IdAjusteBalanza=Cabecera.IdAjusteBalanza where Transacciones.SKU='" & Cod_Producto & "' and  Cabecera.Od_OrdenDespcho='" & Orden_Despacho & "' and tra_estado ='A' ", ConexionSql)
+                ComandoSql = New SqlCommand("SELECT TOP 1 CONCAT(SKU,';',SUBSTRING(Producto,1,20),';','/',UnidadesEstimadas,';',PesoEstimado,';',(SELECT COUNT(*)FROM TransaccionesTemporales WHERE Tra_Estado='A' AND Od_OrdenDespcho='" & Orden_Despacho & "'),';',(SELECT COUNT(*)FROM TransaccionesTemporales WHERE Od_OrdenDespcho='" & Orden_Despacho & "')) FROM TransaccionesTemporales INNER JOIN Cabecera ON TransaccionesTemporales.Od_OrdenDespcho=Cabecera.Od_OrdenDespcho WHERE  Cabecera.Od_OrdenDespcho='" & Orden_Despacho & "' AND tra_estado ='" & Estado & "' AND Cabecera.IdEstablecimiento='" & Establecimiento & "' ORDER BY IdAjuste ASC", ConexionSql)
+                ConexionSql.Open()
+                Respuesta = Convert.ToString(ComandoSql.ExecuteScalar())
+                ConexionSql.Close()
+                SqlConnection.ClearAllPools()
+            End Using
+        Catch ex As Exception
+            GuardarError(ex.Message, ex.StackTrace)
+        Finally
+            If ConexionSql IsNot Nothing AndAlso ConexionSql.State <> ConnectionState.Closed Then
+                ConexionSql.Close()
+            End If
+        End Try
+        Return Respuesta
+    End Function
+
+    Public Function SiguienteProductoTemporal(Estado As String, Sku As String, Orden_Despacho As String, Establecimiento As String) As String
+        Dim Respuesta As String = ""
+        Try
+            Using ConexionSql = New SqlConnection(CadenaSql.String_Conexion())
+                'ComandoSql = New SqlCommand("select Producto from Transacciones where SKU='" & Cod_Producto & "' and  Od_OrdenDespcho='" & Orden_Despacho & "' and tra_estado ='A' ", ConexionSql)
+                'ComandoSql = New SqlCommand("select concat(Producto,';','/',UnidadesEstimadas,';',PesoEstimado,';') from Transacciones inner join Cabecera on Transacciones.IdAjusteBalanza=Cabecera.IdAjusteBalanza where Transacciones.SKU='" & Cod_Producto & "' and  Cabecera.Od_OrdenDespcho='" & Orden_Despacho & "' and tra_estado ='A' ", ConexionSql)
+                ComandoSql = New SqlCommand("SELECT TOP 1 CONCAT(SKU,';',SUBSTRING(Producto,1,20),';','/',UnidadesEstimadas,';',PesoEstimado,';',(SELECT COUNT(*)FROM TransaccionesTemporales WHERE Tra_Estado='A' AND Od_OrdenDespcho='" & Orden_Despacho & "'),';',(SELECT COUNT(*)FROM TransaccionesTemporales WHERE Od_OrdenDespcho='" & Orden_Despacho & "')) FROM TransaccionesTemporales INNER JOIN Cabecera ON TransaccionesTemporales.Od_OrdenDespcho=Cabecera.Od_OrdenDespcho WHERE  Cabecera.Od_OrdenDespcho='" & Orden_Despacho & "' AND tra_estado ='" & Estado & "' AND Cabecera.IdEstablecimiento='" & Establecimiento & "' AND SKU=dbo.fun_siguienteSKU('" & Sku & "','" & Orden_Despacho & "') ORDER BY IdAjuste ASC", ConexionSql)
+                ConexionSql.Open()
+                Respuesta = Convert.ToString(ComandoSql.ExecuteScalar())
+                ConexionSql.Close()
+                SqlConnection.ClearAllPools()
+            End Using
+        Catch ex As Exception
+            GuardarError(ex.Message, ex.StackTrace)
+        Finally
+            If ConexionSql IsNot Nothing AndAlso ConexionSql.State <> ConnectionState.Closed Then
+                ConexionSql.Close()
+            End If
+        End Try
+        Return Respuesta
     End Function
 End Class

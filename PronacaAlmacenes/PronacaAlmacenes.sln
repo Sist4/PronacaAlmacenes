@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.32228.343
+VisualStudioVersion = 16.0.33027.164
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PronacaAlmacenes", "PronacaAlmacenes.vbproj", "{2733D31E-BE62-4327-9F9E-58A491E94F54}"
 EndProject
@@ -10,19 +10,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ServicioPronacaAlmacenes", "..\ServicioPronacaAlmacenes\ServicioPronacaAlmacenes.vbproj", "{1B62FAA7-720F-4831-BA54-8DFF7D763E0A}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ServicioAlmacenes", "..\ServicioAlmacenes\ServicioAlmacenes.vbproj", "{94AFA5E4-513D-4BB0-9CF0-DFE40F6D4AEF}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Almacen Mr Pollo Sur Quito", "..\Almacen Mr Pollo Sur Quito\Almacen Mr Pollo Sur Quito.vdproj", "{E51731A2-6F41-41DA-B5FE-E297048E4749}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "..\Setup1\Setup1.vdproj", "{C7C28EA9-3482-4971-ABA5-575CEA759E39}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Almacen Mr Pollo Portugal Quito", "..\Almacen Mr Pollo Portugal Quito\Almacen Mr Pollo Portugal Quito.vdproj", "{217FD20B-033F-4354-A202-1A5FFB9EA993}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Almacén Mr Pollo Sur Quito", "..\Almacén Mr Pollo Sur Quito\Almacén Mr Pollo Sur Quito.vdproj", "{892DB4AF-BF3A-41D8-A99F-63CB61F17622}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Almacen Mr Pollo Santo Domingo", "..\Almacen Mr Pollo Santo Domingo\Almacen Mr Pollo Santo Domingo.vdproj", "{44555665-4CA3-4B10-8648-7001406CF4DA}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Almacén Mr Pollo Portugal Quito", "..\Almacén Mr Pollo Portugal Quito\Almacén Mr Pollo Portugal Quito.vdproj", "{96001B10-925B-49DD-8742-24491E754248}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Almacen Mr Pollo Guayaquil", "..\Almacen Mr Pollo Guayaquil\Almacen Mr Pollo Guayaquil.vdproj", "{4B90765A-46D2-49C5-A1E3-5AE631F146C4}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Almacén Mr Pollo Santo Domingo", "..\Almacén Mr Pollo Santo Domingo\Almacén Mr Pollo Santo Domingo.vdproj", "{BAE4ED94-EA98-49D1-9D79-DFAE610DDEF1}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Portugal", "..\Portugal\Portugal.vdproj", "{D8CAAB34-B4F0-40C7-BD3C-D95C53BB6FE7}"
-EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Sur", "..\Sur\Sur.vdproj", "{ACFAD2B4-32C2-4489-99B5-7C8037B92B7B}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Almacén Mr Pollo Guayquil", "..\Almacén Mr Pollo Guayquil\Almacén Mr Pollo Guayquil.vdproj", "{53732BB7-FD73-4EEF-A81D-9D42237EB981}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,22 +32,20 @@ Global
 		{2733D31E-BE62-4327-9F9E-58A491E94F54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2733D31E-BE62-4327-9F9E-58A491E94F54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2733D31E-BE62-4327-9F9E-58A491E94F54}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1B62FAA7-720F-4831-BA54-8DFF7D763E0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1B62FAA7-720F-4831-BA54-8DFF7D763E0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1B62FAA7-720F-4831-BA54-8DFF7D763E0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1B62FAA7-720F-4831-BA54-8DFF7D763E0A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E51731A2-6F41-41DA-B5FE-E297048E4749}.Debug|Any CPU.ActiveCfg = Debug
-		{E51731A2-6F41-41DA-B5FE-E297048E4749}.Release|Any CPU.ActiveCfg = Release
-		{217FD20B-033F-4354-A202-1A5FFB9EA993}.Debug|Any CPU.ActiveCfg = Debug
-		{217FD20B-033F-4354-A202-1A5FFB9EA993}.Release|Any CPU.ActiveCfg = Release
-		{44555665-4CA3-4B10-8648-7001406CF4DA}.Debug|Any CPU.ActiveCfg = Debug
-		{44555665-4CA3-4B10-8648-7001406CF4DA}.Release|Any CPU.ActiveCfg = Release
-		{4B90765A-46D2-49C5-A1E3-5AE631F146C4}.Debug|Any CPU.ActiveCfg = Debug
-		{4B90765A-46D2-49C5-A1E3-5AE631F146C4}.Release|Any CPU.ActiveCfg = Release
-		{D8CAAB34-B4F0-40C7-BD3C-D95C53BB6FE7}.Debug|Any CPU.ActiveCfg = Debug
-		{D8CAAB34-B4F0-40C7-BD3C-D95C53BB6FE7}.Release|Any CPU.ActiveCfg = Release
-		{ACFAD2B4-32C2-4489-99B5-7C8037B92B7B}.Debug|Any CPU.ActiveCfg = Debug
-		{ACFAD2B4-32C2-4489-99B5-7C8037B92B7B}.Release|Any CPU.ActiveCfg = Release
+		{94AFA5E4-513D-4BB0-9CF0-DFE40F6D4AEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94AFA5E4-513D-4BB0-9CF0-DFE40F6D4AEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94AFA5E4-513D-4BB0-9CF0-DFE40F6D4AEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94AFA5E4-513D-4BB0-9CF0-DFE40F6D4AEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7C28EA9-3482-4971-ABA5-575CEA759E39}.Debug|Any CPU.ActiveCfg = Debug
+		{C7C28EA9-3482-4971-ABA5-575CEA759E39}.Release|Any CPU.ActiveCfg = Release
+		{892DB4AF-BF3A-41D8-A99F-63CB61F17622}.Debug|Any CPU.ActiveCfg = Debug
+		{892DB4AF-BF3A-41D8-A99F-63CB61F17622}.Release|Any CPU.ActiveCfg = Release
+		{96001B10-925B-49DD-8742-24491E754248}.Debug|Any CPU.ActiveCfg = Debug
+		{96001B10-925B-49DD-8742-24491E754248}.Release|Any CPU.ActiveCfg = Release
+		{BAE4ED94-EA98-49D1-9D79-DFAE610DDEF1}.Debug|Any CPU.ActiveCfg = Debug
+		{BAE4ED94-EA98-49D1-9D79-DFAE610DDEF1}.Release|Any CPU.ActiveCfg = Release
+		{53732BB7-FD73-4EEF-A81D-9D42237EB981}.Debug|Any CPU.ActiveCfg = Debug
+		{53732BB7-FD73-4EEF-A81D-9D42237EB981}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

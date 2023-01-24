@@ -40,10 +40,10 @@ Partial Class Frm_Receptor
         '
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConnectionCountLabel})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 319)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 255)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(2, 0, 13, 0)
-        Me.StatusStrip1.Size = New System.Drawing.Size(515, 22)
+        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(2, 0, 10, 0)
+        Me.StatusStrip1.Size = New System.Drawing.Size(386, 22)
         Me.StatusStrip1.TabIndex = 4
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -54,10 +54,10 @@ Partial Class Frm_Receptor
         '
         'Btn_Conectar
         '
-        Me.Btn_Conectar.Location = New System.Drawing.Point(365, 258)
-        Me.Btn_Conectar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Btn_Conectar.Location = New System.Drawing.Point(274, 210)
+        Me.Btn_Conectar.Margin = New System.Windows.Forms.Padding(2)
         Me.Btn_Conectar.Name = "Btn_Conectar"
-        Me.Btn_Conectar.Size = New System.Drawing.Size(115, 46)
+        Me.Btn_Conectar.Size = New System.Drawing.Size(86, 37)
         Me.Btn_Conectar.TabIndex = 7
         Me.Btn_Conectar.Text = "Start"
         Me.Btn_Conectar.UseVisualStyleBackColor = True
@@ -66,9 +66,10 @@ Partial Class Frm_Receptor
         '
         Me.Lbl_Estado.AutoSize = True
         Me.Lbl_Estado.ForeColor = System.Drawing.Color.Maroon
-        Me.Lbl_Estado.Location = New System.Drawing.Point(12, 290)
+        Me.Lbl_Estado.Location = New System.Drawing.Point(9, 236)
+        Me.Lbl_Estado.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Lbl_Estado.Name = "Lbl_Estado"
-        Me.Lbl_Estado.Size = New System.Drawing.Size(99, 17)
+        Me.Lbl_Estado.Size = New System.Drawing.Size(86, 15)
         Me.Lbl_Estado.TabIndex = 10
         Me.Lbl_Estado.Text = "Desconectado"
         '
@@ -76,7 +77,8 @@ Partial Class Frm_Receptor
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(115, 18)
+        Me.Label1.Location = New System.Drawing.Point(86, 15)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(191, 46)
         Me.Label1.TabIndex = 12
@@ -85,10 +87,10 @@ Partial Class Frm_Receptor
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.PronacaAlmacenes.My.Resources.Resources.PRONACA_1
-        Me.PictureBox1.Location = New System.Drawing.Point(203, 12)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox1.Location = New System.Drawing.Point(152, 10)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(115, 59)
+        Me.PictureBox1.Size = New System.Drawing.Size(86, 48)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 13
         Me.PictureBox1.TabStop = False
@@ -97,7 +99,8 @@ Partial Class Frm_Receptor
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(19, 78)
+        Me.Label2.Location = New System.Drawing.Point(14, 63)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(396, 46)
         Me.Label2.TabIndex = 14
@@ -107,30 +110,29 @@ Partial Class Frm_Receptor
         '
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Location = New System.Drawing.Point(27, 78)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBox1.Location = New System.Drawing.Point(20, 63)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox1.Size = New System.Drawing.Size(466, 162)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
+        Me.GroupBox1.Size = New System.Drawing.Size(350, 132)
         Me.GroupBox1.TabIndex = 15
         Me.GroupBox1.TabStop = False
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(147, 242)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(67, 197)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(201, 17)
+        Me.Label3.Size = New System.Drawing.Size(121, 15)
         Me.Label3.TabIndex = 15
-        Me.Label3.Text = "15 Almacen Mr Pollo Sur Quito"
+        Me.Label3.Text = "15 Almacen Mr Pollo"
         '
         'Frm_Receptor
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ClientSize = New System.Drawing.Size(515, 341)
+        Me.ClientSize = New System.Drawing.Size(386, 277)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.PictureBox1)
@@ -138,7 +140,7 @@ Partial Class Frm_Receptor
         Me.Controls.Add(Me.Btn_Conectar)
         Me.Controls.Add(Me.StatusStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Frm_Receptor"
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
